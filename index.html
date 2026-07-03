@@ -1,0 +1,2745 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>旅日台灣創作者近 90 天內容熱度 Z 世代酷感評級站</title>
+  <style>
+    :root {
+      --bg: #111318;
+      --bg-2: #171a21;
+      --ink: #f7f5ea;
+      --text: #d9deea;
+      --muted: #9ba5b8;
+      --paper: #f7f5ea;
+      --paper-2: #fffdf3;
+      --dark: #111318;
+      --line: rgba(247, 245, 234, .16);
+      --line-dark: rgba(17, 19, 24, .14);
+      --lime: #d8ff3e;
+      --cyan: #6ce7ff;
+      --coral: #ff6f61;
+      --pink: #ff80b5;
+      --blue: #8aa7ff;
+      --green: #23c483;
+      --amber: #ffbf3f;
+      --radius: 8px;
+      --shadow: 0 26px 70px rgba(0, 0, 0, .28);
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      background: var(--bg);
+      color: var(--ink);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.55;
+      letter-spacing: 0;
+      background:
+        linear-gradient(135deg, rgba(216, 255, 62, .08) 0, transparent 24rem),
+        linear-gradient(315deg, rgba(108, 231, 255, .08) 0, transparent 28rem),
+        var(--bg);
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .18;
+      background-image:
+        linear-gradient(rgba(247, 245, 234, .06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(247, 245, 234, .06) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(180deg, #000 0, transparent 76%);
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .22;
+      background:
+        repeating-linear-gradient(180deg, rgba(247, 245, 234, .05) 0 1px, transparent 1px 6px),
+        linear-gradient(90deg, transparent, rgba(108, 231, 255, .08), transparent);
+      mix-blend-mode: screen;
+      transform: translateY(-100%);
+      animation: scanline 9s linear infinite;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #252a33;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--line);
+      background: rgba(17, 19, 24, .84);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border: 1px solid rgba(216, 255, 62, .7);
+      border-radius: 8px;
+      color: var(--dark);
+      background: var(--lime);
+      font-size: 12px;
+      font-weight: 950;
+      transform: rotate(-4deg);
+    }
+
+    .brand span:last-child {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      flex-wrap: wrap;
+      scrollbar-width: none;
+    }
+
+    .navlinks::-webkit-scrollbar {
+      display: none;
+    }
+
+    .navlinks a {
+      min-height: 34px;
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 11px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      background: rgba(247, 245, 234, .06);
+      font-size: 13px;
+      text-decoration: none;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .navlinks a:hover,
+    .navlinks a:focus-visible {
+      color: var(--dark);
+      border-color: var(--lime);
+      background: var(--lime);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .hero {
+      padding: 58px 0 32px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(340px, .96fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .hero-copy {
+      min-width: 0;
+      display: grid;
+      align-content: space-between;
+      min-height: 610px;
+      padding: 34px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(247, 245, 234, .08), rgba(247, 245, 234, .02)),
+        var(--bg-2);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .meta-row,
+    .fine-row,
+    .signal-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 4px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--text);
+      background: rgba(247, 245, 234, .07);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .tag.hot {
+      color: var(--dark);
+      border-color: var(--lime);
+      background: var(--lime);
+    }
+
+    .tag.cyan {
+      color: var(--dark);
+      border-color: var(--cyan);
+      background: var(--cyan);
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 28px 0 18px;
+      color: var(--ink);
+      font-size: clamp(46px, 6vw, 82px);
+      line-height: .9;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .kinetic-title {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 .16em;
+      perspective: 900px;
+    }
+
+    .kinetic-title > span {
+      display: inline-block;
+      transform-origin: left center;
+    }
+
+    .hero-word {
+      display: inline-block;
+      color: var(--dark);
+      background: linear-gradient(110deg, var(--lime), #f9ff8a, var(--cyan), var(--lime));
+      background-size: 260% 100%;
+      padding: 0 .08em .08em;
+      border-radius: 6px;
+      transform: rotate(-2deg);
+      box-shadow: 0 0 0 1px rgba(216, 255, 62, .25), 0 14px 40px rgba(216, 255, 62, .18);
+    }
+
+    .feature-word {
+      position: relative;
+      display: inline-block;
+      flex-basis: 100%;
+      width: max-content;
+      max-width: 100%;
+      margin-top: .05em;
+      color: #e8fbff;
+      background: linear-gradient(95deg, #e8fbff 0%, var(--cyan) 28%, #ffffff 50%, var(--lime) 72%, #e8fbff 100%);
+      background-size: 280% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: .7px rgba(247, 245, 234, .78);
+      text-shadow:
+        1.5px 1.5px 0 rgba(108, 231, 255, .46),
+        -1px -1px 0 rgba(255, 128, 181, .28),
+        0 0 18px rgba(108, 231, 255, .26);
+      font-size: .78em;
+      letter-spacing: .02em;
+      isolation: isolate;
+    }
+
+    .feature-word::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: .08em;
+      bottom: .02em;
+      z-index: -1;
+      height: .18em;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(216, 255, 62, .92), rgba(108, 231, 255, .82), rgba(255, 128, 181, .72));
+      opacity: .82;
+      filter: blur(.1px);
+      transform: skewX(-8deg);
+    }
+
+    .subtitle {
+      max-width: 700px;
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(17px, 2vw, 21px);
+    }
+
+    .typewriter {
+      position: relative;
+    }
+
+    .typewriter.typing::after {
+      content: "";
+      display: inline-block;
+      width: .55em;
+      height: 1em;
+      margin-left: 4px;
+      border-right: 2px solid var(--lime);
+      transform: translateY(.16em);
+      animation: cursorBlink .7s steps(1) infinite;
+    }
+
+    .fine-row {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .hero-board {
+      min-width: 0;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 14px;
+    }
+
+    .score-card,
+    .thumb-card,
+    .paper-card,
+    .dark-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .score-card {
+      min-height: 260px;
+      padding: 24px;
+      border: 1px solid rgba(216, 255, 62, .38);
+      color: var(--dark);
+      background:
+        radial-gradient(circle at 12% 18%, rgba(255, 255, 255, .9), transparent 24%),
+        linear-gradient(120deg, var(--lime), #f8ffb8 34%, var(--cyan), var(--pink), var(--lime));
+      background-size: 140% 140%, 360% 360%;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .score-card::after {
+      content: none;
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .44), transparent);
+      transform: translateX(-120%) skewX(-18deg);
+      animation: cardSheen 5.8s cubic-bezier(.16, 1, .3, 1) infinite;
+    }
+
+    .score-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      color: rgba(17, 19, 24, .72);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .score-main {
+      margin: 16px 0 8px;
+      font-size: clamp(92px, 12vw, 142px);
+      line-height: .78;
+      font-weight: 950;
+      letter-spacing: 0;
+      text-shadow: 3px 3px 0 rgba(108, 231, 255, .3);
+    }
+
+    .score-card p {
+      max-width: 27rem;
+      margin: 0;
+      color: rgba(17, 19, 24, .78);
+      font-weight: 720;
+    }
+
+    .thumb-stack {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 14px;
+      min-height: 336px;
+    }
+
+    .thumb-card {
+      position: relative;
+      min-width: 0;
+      border: 1px solid var(--line);
+      background: #20242c;
+      transition: transform .24s ease, border-color .24s ease, filter .24s ease;
+    }
+
+    .thumb-card:hover,
+    .thumb-card:focus-visible {
+      border-color: rgba(216, 255, 62, .7);
+      filter: saturate(1.12);
+      outline: none;
+      transform: translateY(-4px) rotate(.4deg);
+    }
+
+    .thumb-card.big {
+      grid-row: span 2;
+    }
+
+    .thumb-card img {
+      height: 100%;
+      min-height: 160px;
+      object-fit: cover;
+      filter: saturate(1.05) contrast(1.06);
+    }
+
+    .thumb-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 32%, rgba(17, 19, 24, .82));
+      pointer-events: none;
+    }
+
+    .thumb-caption {
+      position: absolute;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 1;
+      color: white;
+      font-size: 13px;
+      font-weight: 850;
+      line-height: 1.28;
+    }
+
+    .section {
+      padding: 34px 0;
+      scroll-margin-top: 92px;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 18px;
+    }
+
+    .section-kicker {
+      margin-bottom: 8px;
+      color: var(--lime);
+      font-size: 13px;
+      font-weight: 900;
+      text-shadow: 0 0 18px rgba(216, 255, 62, .25);
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(30px, 4.8vw, 56px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 680px;
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .signal-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .signal-card {
+      min-width: 0;
+      min-height: 164px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(247, 245, 234, .06);
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+
+    .signal-card,
+    .paper-card,
+    .dark-card,
+    .creator-card,
+    .short-card,
+    .video-card,
+    .playbook-card,
+    .pillar-card,
+    .platform-card,
+    .position-card,
+    .topic-card,
+    .route-card,
+    .calendar-card,
+    .comment-panel,
+    .comment-rank-card,
+    .audience-card,
+    .sampling-card,
+    .production-card,
+    .shoot-card,
+    .idea-card,
+    .next-card {
+      transform-style: preserve-3d;
+      will-change: transform, opacity;
+    }
+
+    .motion-ready .reveal-target {
+      opacity: 0;
+      transform: translateY(22px) scale(.985);
+    }
+
+    .motion-ready .reveal-target.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      transition: opacity .62s cubic-bezier(.16, 1, .3, 1), transform .62s cubic-bezier(.16, 1, .3, 1);
+      transition-delay: calc(var(--reveal-index, 0) * 36ms);
+    }
+
+    .signal-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(216, 255, 62, .55);
+      background: rgba(247, 245, 234, .1);
+    }
+
+    .signal-card strong {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--ink);
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1;
+      font-weight: 950;
+    }
+
+    .signal-card span {
+      display: block;
+      color: var(--text);
+      font-weight: 850;
+    }
+
+    .signal-card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .lab-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 14px;
+    }
+
+    .paper-card {
+      min-width: 0;
+      padding: 22px;
+      border: 1px solid var(--line-dark);
+      color: var(--dark);
+      background: var(--paper);
+    }
+
+    .paper-card h3,
+    .dark-card h3 {
+      margin: 0 0 14px;
+      font-size: 22px;
+      line-height: 1.16;
+    }
+
+    .weight-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .weight-list li {
+      display: grid;
+      grid-template-columns: 78px minmax(0, 1fr);
+      gap: 12px;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line-dark);
+    }
+
+    .weight-list li:last-child { border-bottom: 0; }
+
+    .weight {
+      color: #597000;
+      font-size: 24px;
+      font-weight: 950;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .dark-card {
+      min-width: 0;
+      padding: 22px;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: rgba(247, 245, 234, .06);
+    }
+
+    .dark-card.alert {
+      border-color: rgba(255, 111, 97, .45);
+      background: linear-gradient(135deg, rgba(255, 111, 97, .18), rgba(247, 245, 234, .05));
+    }
+
+    .dark-card p,
+    .paper-card p {
+      margin: 0;
+      color: inherit;
+      opacity: .82;
+      font-size: 14px;
+    }
+
+    .dark-card p + p { margin-top: 12px; }
+
+    .radar-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr .92fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .creator-card {
+      min-width: 0;
+      display: grid;
+      gap: 18px;
+      min-height: 350px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(247, 245, 234, .07);
+      overflow: hidden;
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .creator-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(216, 255, 62, .58);
+    }
+
+    .creator-card.featured {
+      min-height: 430px;
+      color: var(--dark);
+      border-color: rgba(216, 255, 62, .75);
+      background:
+        linear-gradient(135deg, rgba(216, 255, 62, .96), rgba(108, 231, 255, .82)),
+        var(--lime);
+    }
+
+    .creator-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .rank-chip,
+    .grade {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+
+    .rank-chip {
+      color: var(--dark);
+      background: var(--paper);
+    }
+
+    .grade {
+      color: var(--dark);
+      background: var(--lime);
+      box-shadow: 0 0 22px rgba(216, 255, 62, .2);
+    }
+
+    .featured .grade {
+      color: var(--ink);
+      background: var(--dark);
+    }
+
+    .creator-card h3 {
+      margin: 0;
+      font-size: clamp(24px, 3.3vw, 38px);
+      line-height: 1.02;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .creator-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .featured p {
+      color: rgba(17, 19, 24, .78);
+      font-weight: 720;
+    }
+
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .metric {
+      min-width: 0;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(17, 19, 24, .2);
+    }
+
+    .featured .metric {
+      border-color: rgba(17, 19, 24, .18);
+      background: rgba(17, 19, 24, .08);
+    }
+
+    .metric b {
+      display: block;
+      color: inherit;
+      font-size: 18px;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .metric span {
+      display: block;
+      margin-top: 5px;
+      color: inherit;
+      opacity: .7;
+      font-size: 11px;
+      font-weight: 780;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(247, 245, 234, .05);
+    }
+
+    table {
+      width: 100%;
+      min-width: 980px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 13px 15px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      color: var(--dark);
+      background: var(--lime);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+
+    td.num,
+    th.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .status {
+      display: inline-flex;
+      min-height: 26px;
+      align-items: center;
+      padding: 3px 8px;
+      border-radius: 999px;
+      color: var(--dark);
+      background: var(--paper);
+      font-size: 12px;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+
+    .status.core { background: var(--lime); }
+    .status.watch { background: var(--amber); }
+    .status.empty { color: var(--text); background: rgba(247, 245, 234, .12); }
+
+    .shortlist-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(220px, 1fr));
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scroll-snap-type: x proximity;
+    }
+
+    .short-card {
+      min-width: 0;
+      min-height: 236px;
+      padding: 18px;
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius);
+      color: var(--dark);
+      background: var(--paper-2);
+      scroll-snap-align: start;
+    }
+
+    .short-card:nth-child(2) { background: #e9fbff; }
+    .short-card:nth-child(3) { background: #fff0f5; }
+    .short-card:nth-child(4) { background: #fff6d7; }
+    .short-card:nth-child(5) { background: #eff7ee; }
+
+    .short-card h3 {
+      margin: 14px 0 8px;
+      font-size: 20px;
+      line-height: 1.1;
+      overflow-wrap: anywhere;
+    }
+
+    .short-card p {
+      margin: 0;
+      color: rgba(17, 19, 24, .72);
+      font-size: 13px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .video-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(247, 245, 234, .06);
+      overflow: hidden;
+    }
+
+    .video-card img {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .video-card-content {
+      padding: 14px;
+    }
+
+    .video-card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      line-height: 1.14;
+    }
+
+    .video-card ol {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .video-card li {
+      display: grid;
+      grid-template-columns: 26px minmax(0, 1fr);
+      gap: 9px;
+      align-items: start;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+    }
+
+    .video-card li:first-child {
+      padding-top: 0;
+      border-top: 0;
+    }
+
+    .video-index {
+      display: grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      color: var(--dark);
+      background: var(--cyan);
+      font-size: 11px;
+      font-weight: 950;
+    }
+
+    .video-title {
+      display: block;
+      color: var(--text);
+      font-weight: 760;
+      line-height: 1.34;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .video-title:hover,
+    .video-title:focus-visible {
+      color: var(--lime);
+      outline: none;
+      text-decoration: underline;
+    }
+
+    .video-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .idea-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+    }
+
+    .playbook-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .playbook-grid.followup {
+      margin-top: 14px;
+    }
+
+    .playbook-card {
+      min-width: 0;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(247, 245, 234, .06);
+    }
+
+    .playbook-card.bright {
+      color: var(--dark);
+      border-color: rgba(216, 255, 62, .72);
+      background: var(--lime);
+    }
+
+    .playbook-card h3,
+    .pillar-card h3,
+    .platform-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.12;
+    }
+
+    .playbook-card p,
+    .pillar-card p,
+    .platform-card p {
+      margin: 0;
+      color: inherit;
+      opacity: .78;
+      font-size: 14px;
+    }
+
+    .playbook-card p + p { margin-top: 10px; }
+
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .pillar-card {
+      min-width: 0;
+      min-height: 178px;
+      padding: 16px;
+      border: 1px solid var(--line-dark);
+      border-radius: var(--radius);
+      color: var(--dark);
+      background: var(--paper-2);
+    }
+
+    .pillar-card:nth-child(2) { background: #e9fbff; }
+    .pillar-card:nth-child(3) { background: #fff0f5; }
+    .pillar-card:nth-child(4) { background: #fff6d7; }
+    .pillar-card:nth-child(5) { background: #eff7ee; }
+    .pillar-card:nth-child(6) { background: #ece9ff; }
+
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .platform-card {
+      min-width: 0;
+      min-height: 160px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(247, 245, 234, .06);
+    }
+
+    .source-note {
+      margin-top: 14px;
+      padding: 16px;
+      border: 1px solid rgba(255, 191, 63, .48);
+      border-radius: var(--radius);
+      background: rgba(255, 191, 63, .1);
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .position-grid,
+    .route-grid,
+    .production-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .position-card,
+    .route-card,
+    .production-card,
+    .shoot-card,
+    .topic-card,
+    .calendar-card,
+    .comment-panel,
+    .comment-rank-card,
+    .audience-card,
+    .sampling-card {
+      min-width: 0;
+      border-radius: var(--radius);
+    }
+
+    .position-card {
+      min-height: 248px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: rgba(247, 245, 234, .06);
+    }
+
+    .position-card.primary {
+      color: var(--dark);
+      border-color: rgba(216, 255, 62, .72);
+      background: var(--lime);
+    }
+
+    .position-card h3,
+    .route-card h3,
+    .production-card h3,
+    .shoot-card h3,
+    .topic-card h3,
+    .calendar-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.12;
+    }
+
+    .position-card p,
+    .route-card p,
+    .production-card p,
+    .shoot-card p,
+    .topic-card p,
+    .calendar-card p {
+      margin: 0;
+      color: inherit;
+      opacity: .78;
+      font-size: 14px;
+    }
+
+    .position-card ul,
+    .route-card ul,
+    .production-card ul,
+    .shoot-card ul {
+      margin: 12px 0 0;
+      padding-left: 20px;
+      color: inherit;
+      font-size: 14px;
+    }
+
+    .position-card li + li,
+    .route-card li + li,
+    .production-card li + li,
+    .shoot-card li + li { margin-top: 6px; }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .topic-card {
+      min-height: 190px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: rgba(247, 245, 234, .06);
+    }
+
+    .topic-card:nth-child(4n+1) { border-color: rgba(216, 255, 62, .38); }
+    .topic-card:nth-child(4n+2) { border-color: rgba(108, 231, 255, .38); }
+    .topic-card:nth-child(4n+3) { border-color: rgba(255, 128, 181, .38); }
+    .topic-card:nth-child(4n+4) { border-color: rgba(255, 191, 63, .38); }
+
+    .topic-card .tag,
+    .calendar-card .tag {
+      margin-bottom: 12px;
+    }
+
+    .comment-lab-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .98fr) minmax(0, 1.02fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .comment-panel,
+    .comment-rank-card,
+    .audience-card,
+    .sampling-card {
+      min-width: 0;
+      border-radius: var(--radius);
+    }
+
+    .comment-panel {
+      padding: 22px;
+      border: 1px solid rgba(108, 231, 255, .46);
+      color: var(--dark);
+      background:
+        linear-gradient(132deg, rgba(108, 231, 255, .92), rgba(247, 245, 234, .92) 46%, rgba(216, 255, 62, .9)),
+        var(--cyan);
+      background-size: 260% 260%;
+    }
+
+    .comment-panel h3,
+    .comment-rank-card h3,
+    .audience-card h3,
+    .sampling-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.12;
+    }
+
+    .comment-panel p,
+    .comment-rank-card p,
+    .audience-card p,
+    .sampling-card p {
+      margin: 0;
+      color: inherit;
+      opacity: .78;
+      font-size: 14px;
+    }
+
+    .comment-kpis {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .comment-kpi {
+      min-width: 0;
+      padding: 12px;
+      border: 1px solid rgba(17, 19, 24, .16);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .28);
+    }
+
+    .comment-kpi strong {
+      display: block;
+      font-size: 32px;
+      line-height: 1;
+      font-weight: 950;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .comment-kpi span {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      font-weight: 850;
+      opacity: .72;
+    }
+
+    .comment-rank-grid,
+    .audience-grid,
+    .sampling-grid,
+    .debate-grid {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .comment-rank-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .audience-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .sampling-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .debate-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .comment-rank-card {
+      min-height: 250px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: rgba(247, 245, 234, .06);
+    }
+
+    .comment-rank-card:nth-child(2) {
+      color: var(--dark);
+      border-color: rgba(255, 128, 181, .7);
+      background: linear-gradient(135deg, #ffe0ec, #fff9df, var(--cyan));
+      background-size: 240% 240%;
+    }
+
+    .comment-rank-card:nth-child(3) {
+      color: var(--dark);
+      border-color: rgba(216, 255, 62, .72);
+      background: linear-gradient(135deg, var(--lime), #f9ffb8, #e9fbff);
+      background-size: 240% 240%;
+    }
+
+    .comment-rank-card:nth-child(2) .tag,
+    .comment-rank-card:nth-child(3) .tag {
+      color: var(--dark);
+      border-color: rgba(17, 19, 24, .18);
+      background: rgba(255, 255, 255, .42);
+    }
+
+    .rank-lines {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .rank-line {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 9px;
+      align-items: start;
+      padding: 9px;
+      border: 1px solid currentColor;
+      border-radius: var(--radius);
+      opacity: .78;
+      font-size: 13px;
+    }
+
+    .rank-line b {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .audience-card {
+      min-height: 188px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: rgba(247, 245, 234, .06);
+    }
+
+    .audience-card:nth-child(1) { border-color: rgba(216, 255, 62, .42); }
+    .audience-card:nth-child(2) { border-color: rgba(108, 231, 255, .42); }
+    .audience-card:nth-child(3) { border-color: rgba(255, 128, 181, .42); }
+    .audience-card:nth-child(4) { border-color: rgba(255, 191, 63, .42); }
+
+    .sampling-card {
+      min-height: 198px;
+      padding: 16px;
+      border: 1px solid var(--line-dark);
+      color: var(--dark);
+      background: var(--paper-2);
+    }
+
+    .sampling-card:nth-child(2) { background: #e9fbff; }
+    .sampling-card:nth-child(3) { background: #fff0f5; }
+
+    .score-formula {
+      margin-top: 14px;
+      padding: 18px;
+      border: 1px solid rgba(216, 255, 62, .55);
+      border-radius: var(--radius);
+      background: rgba(216, 255, 62, .08);
+    }
+
+    .score-formula code {
+      display: block;
+      color: var(--dark);
+      font-family: inherit;
+      font-size: clamp(18px, 2.3vw, 28px);
+      font-weight: 950;
+      line-height: 1.25;
+      white-space: normal;
+    }
+
+    .route-card {
+      min-height: 520px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: rgba(247, 245, 234, .06);
+    }
+
+    .route-card:nth-child(2) {
+      color: var(--dark);
+      border-color: rgba(108, 231, 255, .7);
+      background: linear-gradient(135deg, var(--cyan), #dff8ff, var(--lime));
+      background-size: 220% 220%;
+    }
+
+    .route-card:nth-child(3) {
+      color: var(--dark);
+      border-color: rgba(255, 128, 181, .7);
+      background: linear-gradient(135deg, #ffd6e7, #fff0f7, var(--amber));
+      background-size: 220% 220%;
+    }
+
+    .mini-script {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .mini-script div {
+      padding: 10px;
+      border: 1px solid currentColor;
+      border-radius: var(--radius);
+      opacity: .78;
+      font-size: 13px;
+    }
+
+    .production-card {
+      min-height: 680px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: rgba(247, 245, 234, .06);
+    }
+
+    .production-card:nth-child(2) {
+      color: var(--dark);
+      border-color: rgba(216, 255, 62, .7);
+      background: linear-gradient(135deg, var(--lime), #f7f5ea, var(--cyan));
+      background-size: 240% 240%;
+    }
+
+    .production-card:nth-child(3) {
+      color: var(--dark);
+      border-color: rgba(255, 128, 181, .72);
+      background: linear-gradient(135deg, #ffd6e7, #fff9df, var(--amber));
+      background-size: 240% 240%;
+    }
+
+    .shot-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .shot-row {
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr);
+      gap: 10px;
+      padding: 10px;
+      border: 1px solid currentColor;
+      border-radius: var(--radius);
+      opacity: .8;
+      font-size: 13px;
+    }
+
+    .shot-row b {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .material-list {
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px solid currentColor;
+      border-radius: var(--radius);
+      opacity: .84;
+    }
+
+    .shoot-card {
+      padding: 24px;
+      border: 1px solid rgba(108, 231, 255, .62);
+      background:
+        linear-gradient(135deg, rgba(108, 231, 255, .18), rgba(216, 255, 62, .12)),
+        rgba(247, 245, 234, .06);
+    }
+
+    .cover-title-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .cover-title {
+      min-height: 112px;
+      display: grid;
+      align-content: center;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(247, 245, 234, .08);
+      font-size: 18px;
+      line-height: 1.12;
+      font-weight: 950;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .calendar-card {
+      min-height: 196px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: rgba(247, 245, 234, .06);
+    }
+
+    .calendar-card b {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--lime);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .calendar-card h3 {
+      font-size: 16px;
+    }
+
+    .calendar-card p {
+      font-size: 12px;
+    }
+
+    .idea-card {
+      min-width: 0;
+      min-height: 260px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(247, 245, 234, .06);
+    }
+
+    .idea-card:nth-child(2) {
+      color: var(--dark);
+      border-color: rgba(108, 231, 255, .7);
+      background: var(--cyan);
+    }
+
+    .idea-card h3 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      line-height: 1.08;
+    }
+
+    .idea-card ul {
+      margin: 0;
+      padding-left: 20px;
+      color: inherit;
+    }
+
+    .idea-card li + li { margin-top: 8px; }
+
+    .next-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .next-card {
+      min-width: 0;
+      min-height: 184px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(247, 245, 234, .06);
+    }
+
+    .next-card b {
+      display: inline-flex;
+      min-height: 28px;
+      align-items: center;
+      padding: 3px 8px;
+      border-radius: 999px;
+      color: var(--dark);
+      background: var(--lime);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .next-card h3 {
+      margin: 18px 0 8px;
+      font-size: 18px;
+    }
+
+    .next-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer {
+      padding: 38px 0 58px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-copy,
+      .score-card,
+      .thumb-card,
+      .section {
+        animation: rise .7s cubic-bezier(.16, 1, .3, 1) both;
+      }
+
+      .score-card { animation-delay: .06s; }
+      .thumb-card:nth-child(1) { animation-delay: .12s; }
+      .thumb-card:nth-child(2) { animation-delay: .18s; }
+      .thumb-card:nth-child(3) { animation-delay: .24s; }
+
+      .kinetic-title > span {
+        animation: titlePop .72s cubic-bezier(.16, 1, .3, 1) both;
+      }
+
+      .kinetic-title > span:nth-child(2) { animation-delay: .08s; }
+      .kinetic-title > span:nth-child(3) { animation-delay: .16s; }
+
+      .hero-word,
+      .feature-word,
+      .score-card,
+      .comment-panel,
+      .comment-rank-card:nth-child(2),
+      .comment-rank-card:nth-child(3),
+      .route-card:nth-child(2),
+      .route-card:nth-child(3),
+      .production-card:nth-child(2),
+      .production-card:nth-child(3) {
+        animation-name: gradientFlow;
+        animation-duration: 8s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+      }
+
+      .hero-word {
+        animation-duration: 6s;
+      }
+
+      .feature-word {
+        animation-duration: 7.5s;
+      }
+
+      .score-main {
+        animation: dataPulse 3.8s ease-in-out infinite;
+      }
+
+      @keyframes rise {
+        from { opacity: 0; transform: translateY(22px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes titlePop {
+        from { opacity: 0; transform: translateY(34px) rotateX(16deg) skewX(-4deg); filter: blur(6px); }
+        to { opacity: 1; transform: translateY(0) rotateX(0) skewX(0); filter: blur(0); }
+      }
+
+      @keyframes gradientFlow {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+
+      @keyframes cardSheen {
+        0%, 42% { transform: translateX(-120%) skewX(-18deg); opacity: 0; }
+        52% { opacity: .7; }
+        64%, 100% { transform: translateX(120%) skewX(-18deg); opacity: 0; }
+      }
+
+      @keyframes dataPulse {
+        0%, 100% { transform: translateY(0); text-shadow: 3px 3px 0 rgba(108, 231, 255, .3); }
+        50% { transform: translateY(-3px); text-shadow: 5px 5px 0 rgba(255, 128, 181, .24); }
+      }
+
+      @keyframes scanline {
+        0% { transform: translateY(-100%); }
+        100% { transform: translateY(100%); }
+      }
+
+      @keyframes cursorBlink {
+        0%, 48% { opacity: 1; }
+        49%, 100% { opacity: 0; }
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+
+      .motion-ready .reveal-target {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .lab-grid,
+      .radar-grid,
+      .playbook-grid,
+      .position-grid,
+      .comment-lab-grid,
+      .route-grid,
+      .production-grid,
+      .idea-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy { min-height: auto; }
+
+      .signal-grid,
+      .video-grid,
+      .pillar-grid,
+      .platform-grid,
+      .topic-grid,
+      .comment-rank-grid,
+      .audience-grid,
+      .sampling-grid,
+      .debate-grid,
+      .cover-title-grid,
+      .calendar-grid,
+      .next-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      .shell { width: min(100% - 24px, 1180px); }
+
+      .nav {
+        min-height: auto;
+        padding: 12px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .navlinks {
+        width: 100%;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      .navlinks a { flex: 0 0 auto; }
+      .hero { padding-top: 28px; }
+      .hero-copy,
+      .score-card,
+      .paper-card,
+      .dark-card,
+      .creator-card,
+      .position-card,
+      .comment-panel,
+      .comment-rank-card,
+      .audience-card,
+      .sampling-card,
+      .route-card,
+      .production-card,
+      .shoot-card,
+      .topic-card,
+      .calendar-card,
+      .idea-card,
+      .next-card {
+        padding: 16px;
+      }
+
+      h1 {
+        margin-top: 24px;
+        font-size: clamp(40px, 13vw, 56px);
+        line-height: .92;
+      }
+
+      .feature-word {
+        font-size: .72em;
+        -webkit-text-stroke-width: .8px;
+      }
+
+      .subtitle { font-size: 16px; }
+      .score-main { font-size: 94px; }
+      .thumb-stack { grid-template-columns: 1fr; }
+      .thumb-card.big { grid-row: auto; }
+      .signal-grid,
+      .video-grid,
+      .pillar-grid,
+      .platform-grid,
+      .position-grid,
+      .route-grid,
+      .production-grid,
+      .topic-grid,
+      .comment-kpis,
+      .comment-rank-grid,
+      .audience-grid,
+      .sampling-grid,
+      .debate-grid,
+      .cover-title-grid,
+      .calendar-grid,
+      .next-grid,
+      .metric-row {
+        grid-template-columns: 1fr;
+      }
+
+      th,
+      td {
+        padding: 11px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell nav">
+      <div class="brand">
+        <span class="brand-mark">熱榜</span>
+        <span>旅日台灣創作者酷感評級站</span>
+      </div>
+      <nav class="navlinks" aria-label="報告章節">
+        <a href="#summary">快速看</a>
+        <a href="#method">方法</a>
+        <a href="#ratings">雷達</a>
+        <a href="#ranking">排行</a>
+        <a href="#shortlist">候選</a>
+        <a href="#videos">樣本牆</a>
+        <a href="#creator-playbook">方針</a>
+        <a href="#positioning">定位</a>
+        <a href="#topic-bank">題庫</a>
+        <a href="#comment-intelligence">留言側寫</a>
+        <a href="#audience-debate">吵點</a>
+        <a href="#short-video-routes">提案</a>
+        <a href="#storyboards">分鏡</a>
+        <a href="#first-script">首支腳本</a>
+        <a href="#calendar-30">月曆</a>
+        <a href="#platform-posting">發文表</a>
+        <a href="#next">下一步</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="shell hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div>
+            <div class="meta-row">
+              <span class="tag hot">Creator Heat Lab</span>
+              <span class="tag">近 90 天</span>
+              <span class="tag cyan">YouTube 公開資料</span>
+            </div>
+            <h1 class="kinetic-title"><span>旅日創作者</span><span class="hero-word">熱度評級</span><span class="feature-word">創作者思維特集</span></h1>
+            <p class="subtitle typewriter" data-typewriter="給想切入旅日內容的新類創作者：看懂熱度來源，再長出自己的內容路線。">給想切入旅日內容的新類創作者：看懂熱度來源，再長出自己的內容路線。</p>
+          </div>
+          <div class="fine-row">
+            <span>目的：創作定位與選題思考</span>
+            <span>口徑：近期影片表現</span>
+            <span>限制：不可當訂閱成長率</span>
+          </div>
+        </div>
+
+        <aside class="hero-board" aria-label="熱度總覽">
+          <div class="score-card">
+            <div class="score-label"><span>整體可合作覆蓋評級</span><span>2026-07-03</span></div>
+            <div class="score-main">A</div>
+            <p class="typewriter" data-typewriter="已有 3 位高優先學習樣本；鈴木的日常因為是日本人視角，改列轉譯備用樣本。">已有 3 位高優先學習樣本；鈴木的日常因為是日本人視角，改列轉譯備用樣本。</p>
+          </div>
+          <div class="thumb-stack">
+            <a class="thumb-card big" href="https://www.youtube.com/watch?v=gSD6NYuZOVY">
+              <img src="https://img.youtube.com/vi/gSD6NYuZOVY/hqdefault.jpg" alt="Alan Channel 日本退稅影片縮圖" width="480" height="360">
+              <span class="thumb-caption">Alan Channel：退稅制度內容帶出高討論</span>
+            </a>
+            <a class="thumb-card" href="https://www.youtube.com/watch?v=vBgyaXDYogY">
+              <img src="https://img.youtube.com/vi/vBgyaXDYogY/hqdefault.jpg" alt="瓶顆旅居日本中 九州七星號影片縮圖" width="480" height="360">
+              <span class="thumb-caption">瓶顆：旅居加高價體驗</span>
+            </a>
+            <a class="thumb-card" href="https://www.youtube.com/watch?v=KLY02ndYXp4">
+              <img src="https://img.youtube.com/vi/KLY02ndYXp4/hqdefault.jpg" alt="日本曼生活 大阪壽喜燒影片縮圖" width="480" height="360">
+              <span class="thumb-caption">日本曼生活：大阪美食入口</span>
+            </a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="shell section" id="summary">
+      <div class="section-head">
+        <div class="section-kicker">先看結論</div>
+        <h2>這不是誰最紅，而是誰最值得先聊。</h2>
+        <p class="lead">本頁把觀看、留言、發片密度、平均觀看與旅日核心題材合在一起，幫創作者判斷哪種內容更值得長期經營。</p>
+      </div>
+      <div class="signal-grid">
+        <article class="signal-card"><strong>12</strong><span>白名單頻道</span><p>只在指定名單內做相對排序，不外推到全市場。</p></article>
+        <article class="signal-card"><strong>129</strong><span>近 90 天影片</span><p>用公開影片表現建立內容熱度，不用未取得的歷史訂閱數。</p></article>
+        <article class="signal-card"><strong>3</strong><span>高優先候選</span><p>Alan、瓶顆、日本曼生活可先進入合作資訊確認。</p></article>
+        <article class="signal-card"><strong>4 週</strong><span>成長觀察門檻</span><p>累積四週 subscriberCount 快照後，再看週成長率。</p></article>
+      </div>
+    </section>
+
+    <section class="shell section" id="method">
+      <div class="section-head">
+        <div class="section-kicker">方法論保留</div>
+        <h2>酷可以，但分數要講得清楚。</h2>
+        <p class="lead">評級是為了合作初篩，不是市場規模結論。資料限制會放在畫面裡，不藏在註腳。</p>
+      </div>
+      <div class="lab-grid">
+        <article class="paper-card">
+          <h3>內容熱度權重</h3>
+          <ul class="weight-list">
+            <li><span class="weight">35%</span><span>近 90 天總觀看</span></li>
+            <li><span class="weight">25%</span><span>近 90 天平均觀看</span></li>
+            <li><span class="weight">20%</span><span>近 90 天總留言</span></li>
+            <li><span class="weight">10%</span><span>近 90 天發片數</span></li>
+            <li><span class="weight">10%</span><span>核心題材占比</span></li>
+          </ul>
+        </article>
+        <article class="dark-card alert">
+          <h3>限制講白一點</h3>
+          <p><strong>不可解讀為訂閱成長率。</strong> YouTube 公開 API 不提供陌生頻道歷史訂閱數。本輪只有 2026-07-03 第一筆 subscriberCount 快照。</p>
+          <p>單支非核心題材爆量會抬高總觀看。合作前仍要人工確認題材、受眾留言與品牌適配。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section" id="ratings">
+      <div class="section-head">
+        <div class="section-kicker">合作雷達</div>
+        <h2>先敲這三位，理由已經整理好。</h2>
+        <p class="lead">前三名具備近期表現、互動、旅日題材一致性。這裡直接翻成合作判斷語言。</p>
+      </div>
+      <div class="radar-grid">
+        <article class="creator-card featured">
+          <div class="creator-head"><span class="rank-chip">Rank 01</span><span class="grade">AA</span></div>
+          <div>
+            <h3>Alan Channel / 阿倫頻道</h3>
+            <p>27 支影片，1,177,456 總觀看，2,830 留言，核心題材占比 100%。適合日本生活、台日文化、旅遊用品與生活服務合作初篩。</p>
+          </div>
+          <div class="metric-row">
+            <div class="metric"><b>94.43</b><span>熱度分數</span></div>
+            <div class="metric"><b>27</b><span>發片數</span></div>
+            <div class="metric"><b>100%</b><span>核心題材</span></div>
+          </div>
+        </article>
+        <article class="creator-card">
+          <div class="creator-head"><span class="rank-chip">Rank 02</span><span class="grade">AA-</span></div>
+          <div>
+            <h3>瓶顆旅居日本中</h3>
+            <p>發片穩定、總觀看高，頻道定位直接對應旅居日本。適合生活體驗與地區旅遊。</p>
+          </div>
+          <div class="metric-row">
+            <div class="metric"><b>91.99</b><span>熱度分數</span></div>
+            <div class="metric"><b>25</b><span>發片數</span></div>
+            <div class="metric"><b>100%</b><span>核心題材</span></div>
+          </div>
+        </article>
+        <article class="creator-card">
+          <div class="creator-head"><span class="rank-chip">Rank 03</span><span class="grade">A+</span></div>
+          <div>
+            <h3>日本曼生活</h3>
+            <p>大阪與地區旅遊關聯強，適合在地路線、美食、購物與旅遊內容合作觀察。</p>
+          </div>
+          <div class="metric-row">
+            <div class="metric"><b>88.45</b><span>熱度分數</span></div>
+            <div class="metric"><b>15</b><span>發片數</span></div>
+            <div class="metric"><b>86.7%</b><span>核心題材</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section" id="ranking">
+      <div class="section-head">
+        <div class="section-kicker">完整排行</div>
+        <h2>需要細看時，資料也在。</h2>
+        <p class="lead">表格保留關鍵欄位。手機可左右滑動，但頁面本身不應橫向爆版。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>排名</th>
+              <th>評級</th>
+              <th>頻道</th>
+              <th class="num">發片</th>
+              <th class="num">總觀看</th>
+              <th class="num">留言</th>
+              <th class="num">平均觀看</th>
+              <th>核心題材</th>
+              <th class="num">分數</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td><span class="status core">AA</span></td><td>Alan Channel / 阿倫頻道</td><td class="num">27</td><td class="num">1,177,456</td><td class="num">2,830</td><td class="num">43,610</td><td><span class="status core">100%</span></td><td class="num">94.43</td></tr>
+            <tr><td>2</td><td><span class="status core">AA-</span></td><td>瓶顆旅居日本中</td><td class="num">25</td><td class="num">1,125,176</td><td class="num">1,145</td><td class="num">45,007</td><td><span class="status core">100%</span></td><td class="num">91.99</td></tr>
+            <tr><td>3</td><td><span class="status core">A+</span></td><td>日本曼生活</td><td class="num">15</td><td class="num">742,572</td><td class="num">1,192</td><td class="num">49,505</td><td><span class="status core">86.7%</span></td><td class="num">88.45</td></tr>
+            <tr><td>4</td><td><span class="status core">A</span></td><td>實彩子Misako</td><td class="num">5</td><td class="num">410,282</td><td class="num">643</td><td class="num">82,056</td><td><span class="status core">100%</span></td><td class="num">84.89</td></tr>
+            <tr><td>5</td><td><span class="status watch">轉譯樣本</span></td><td>鈴木的日常</td><td class="num">4</td><td class="num">1,448,349</td><td class="num">4,163</td><td class="num">362,087</td><td><span class="status watch">日本人視角</span></td><td class="num">84.83</td></tr>
+            <tr><td>6</td><td><span class="status core">A-</span></td><td>日本有個U1 YuiTube</td><td class="num">12</td><td class="num">390,313</td><td class="num">447</td><td class="num">32,526</td><td><span class="status core">100%</span></td><td class="num">84.40</td></tr>
+            <tr><td>7</td><td><span class="status core">B+</span></td><td>Nick's Snaps / 旅日週誌</td><td class="num">11</td><td class="num">67,621</td><td class="num">558</td><td class="num">6,147</td><td><span class="status core">100%</span></td><td class="num">77.12</td></tr>
+            <tr><td>8</td><td><span class="status watch">B</span></td><td>台湾人 in Japan</td><td class="num">12</td><td class="num">87,245</td><td class="num">213</td><td class="num">7,270</td><td><span class="status watch">66.7%</span></td><td class="num">72.69</td></tr>
+            <tr><td>9</td><td><span class="status core">B-</span></td><td>台日夫妻 / 日台one!</td><td class="num">11</td><td class="num">41,178</td><td class="num">58</td><td class="num">3,744</td><td><span class="status core">100%</span></td><td class="num">69.54</td></tr>
+            <tr><td>10</td><td><span class="status watch">B-</span></td><td>AMI&LEE聊日本</td><td class="num">7</td><td class="num">22,966</td><td class="num">166</td><td class="num">3,281</td><td><span class="status watch">85.7%</span></td><td class="num">67.68</td></tr>
+            <tr><td>11</td><td><span class="status empty">No Data</span></td><td>糖餃子Sweet Dumpling</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td><span class="status empty">0%</span></td><td class="num">0.00</td></tr>
+            <tr><td>12</td><td><span class="status empty">No Data</span></td><td>Senka日本旅遊</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td><span class="status empty">0%</span></td><td class="num">0.00</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="shell section" id="shortlist">
+      <div class="section-head">
+        <div class="section-kicker">合作候選</div>
+        <h2>企劃端可以先拿這五張卡去討論。</h2>
+        <p class="lead">這裡不是最終採購名單，而是第一輪私訊、查信箱、看留言受眾的優先順序。</p>
+      </div>
+      <div class="shortlist-grid">
+        <article class="short-card"><span class="status core">第一優先</span><h3>Alan Channel / 阿倫頻道</h3><p>近期產出密度最高，總觀看與留言都強，適合日本生活、台日文化與旅遊用品。</p></article>
+        <article class="short-card"><span class="status core">第一優先</span><h3>瓶顆旅居日本中</h3><p>發片穩定、總觀看高，頻道定位直接對應旅居日本，適合生活體驗與地區旅遊。</p></article>
+        <article class="short-card"><span class="status core">第一優先</span><h3>日本曼生活</h3><p>大阪與日本地區旅遊關聯強，適合在地路線、購物與旅遊內容。</p></article>
+        <article class="short-card"><span class="status core">題材精準</span><h3>實彩子Misako</h3><p>發片較少但平均觀看高，北海道與觀光列車題材清楚，適合主題型合作。</p></article>
+        <article class="short-card"><span class="status watch">轉譯備用</span><h3>鈴木的日常</h3><p>觀看與留言很強，但創作者是日本人，不符合旅日台灣人核心主題。可保留作跨文化情緒與台灣受眾互動樣本。</p></article>
+      </div>
+    </section>
+
+    <section class="shell section" id="videos">
+      <div class="section-head">
+        <div class="section-kicker">樣本牆</div>
+        <h2>觀眾真的會討論什麼，先看影片切口。</h2>
+        <p class="lead">保留高留言樣本，用來判斷觀眾會提問、爭論、共鳴或想跟著走的題材。</p>
+      </div>
+      <div class="video-grid">
+        <article class="video-card">
+          <img src="https://img.youtube.com/vi/J9iJMhFevoM/hqdefault.jpg" alt="Alan Channel 休息是為了走更長遠影片縮圖" width="480" height="360" loading="lazy">
+          <div class="video-card-content">
+            <h3>Alan Channel / 阿倫頻道</h3>
+            <ol>
+              <li><span class="video-index">1</span><div><a class="video-title" href="https://www.youtube.com/watch?v=J9iJMhFevoM">休息是為了走更長遠，我先來去維修一下了《阿倫聊聊天》</a><div class="video-meta"><span>952 則留言</span><span>70,920 觀看</span></div></div></li>
+              <li><span class="video-index">2</span><div><a class="video-title" href="https://www.youtube.com/watch?v=gSD6NYuZOVY">日本退稅大變革！2026年11月起全面改成「先付後退」小心在機場崩潰</a><div class="video-meta"><span>569 則留言</span><span>131,738 觀看</span></div></div></li>
+            </ol>
+          </div>
+        </article>
+        <article class="video-card">
+          <img src="https://img.youtube.com/vi/vBgyaXDYogY/hqdefault.jpg" alt="瓶顆旅居日本中 九州七星號影片縮圖" width="480" height="360" loading="lazy">
+          <div class="video-card-content">
+            <h3>瓶顆旅居日本中</h3>
+            <ol>
+              <li><span class="video-index">1</span><div><a class="video-title" href="https://www.youtube.com/watch?v=vBgyaXDYogY">一趟要價48萬台幣，只載10組客人，日本最豪華臥鋪列車「九州七星號」徹底開箱</a><div class="video-meta"><span>218 則留言</span><span>103,426 觀看</span></div></div></li>
+              <li><span class="video-index">2</span><div><a class="video-title" href="https://www.youtube.com/watch?v=f9DzJHNMFMQ">2026最新東京迪士尼海洋25周年有哪些表演及活動？</a><div class="video-meta"><span>119 則留言</span><span>114,916 觀看</span></div></div></li>
+            </ol>
+          </div>
+        </article>
+        <article class="video-card">
+          <img src="https://img.youtube.com/vi/KLY02ndYXp4/hqdefault.jpg" alt="日本曼生活 大阪壽喜燒影片縮圖" width="480" height="360" loading="lazy">
+          <div class="video-card-content">
+            <h3>日本曼生活</h3>
+            <ol>
+              <li><span class="video-index">1</span><div><a class="video-title" href="https://www.youtube.com/watch?v=KLY02ndYXp4">大阪話題壽喜燒！NT2000元真的值得嗎</a><div class="video-meta"><span>103 則留言</span><span>34,854 觀看</span></div></div></li>
+              <li><span class="video-index">2</span><div><a class="video-title" href="https://www.youtube.com/watch?v=wfQRYnFlUSY">大阪美食私藏名單，新世界超推的便宜炸串</a><div class="video-meta"><span>101 則留言</span><span>37,070 觀看</span></div></div></li>
+            </ol>
+          </div>
+        </article>
+        <article class="video-card">
+          <img src="https://img.youtube.com/vi/6Cbnpaebon0/hqdefault.jpg" alt="鈴木的日常 台灣部落影片縮圖" width="480" height="360" loading="lazy">
+          <div class="video-card-content">
+            <h3>鈴木的日常</h3>
+            <ol>
+              <li><span class="video-index">1</span><div><a class="video-title" href="https://www.youtube.com/watch?v=6Cbnpaebon0">在沖繩學中文的日本女生第一次走進嚮往已久的台灣部落</a><div class="video-meta"><span>1,327 則留言</span><span>439,587 觀看</span></div></div></li>
+              <li><span class="video-index">2</span><div><a class="video-title" href="https://www.youtube.com/watch?v=ju9MQ96_VuY">3年後再次回到台灣，姐姐終於帶著老公和孩子回來看阿公了</a><div class="video-meta"><span>1,011 則留言</span><span>264,456 觀看</span></div></div></li>
+            </ol>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section" id="creator-playbook">
+      <div class="section-head">
+        <div class="section-kicker">新類創作者方針</div>
+        <h2>不要只模仿高觀看，要建立自己的日本觀察入口。</h2>
+        <p class="lead">用品牌社群的方法看，這份報告不是叫新創作者追流量，而是幫你決定角色、內容支柱、平台分工與 30 天測試節奏。</p>
+      </div>
+      <div class="playbook-grid">
+        <article class="playbook-card bright">
+          <h3>AE 入口判定</h3>
+          <p><strong>案件類型：</strong>新類創作者啟動，偏新創品牌啟動與純社群執行的混合型。</p>
+          <p><strong>最大缺口：</strong>不是素材不夠，而是缺清楚定位、穩定欄目、可被信任的證據格式。</p>
+          <p><strong>交接路徑：</strong>品牌社群做定位與內容支柱，再交給社群內容營運排節奏，最後交給影片提案生成腳本。</p>
+        </article>
+        <article class="playbook-card">
+          <h3>核心主張</h3>
+          <p>用台灣人的語言，把日本生活、旅遊、制度與文化差異翻成可做決定的內容。</p>
+          <p>新類創作者不要只當「去了哪裡的人」，而要成為某一群人的日本判斷入口：第一次自由行、想旅居日本、親子旅遊、地方深度、在日生活成本、制度避雷，都可以是入口。</p>
+        </article>
+      </div>
+
+      <div class="pillar-grid" aria-label="六大內容支柱">
+        <article class="pillar-card"><h3>品牌觀點</h3><p>你相信什麼日本觀察？例如：日本不是濾鏡，而是需要理解規則、成本與地方差異。</p></article>
+        <article class="pillar-card"><h3>產品情境</h3><p>把交通、住宿、餐飲、購物、票券、生活服務放進真實使用情境，不只做清單。</p></article>
+        <article class="pillar-card"><h3>受眾痛點</h3><p>第一次去日本怕踩雷、想搬日本怕制度、想深度旅遊怕看不懂資訊，這些都是選題入口。</p></article>
+        <article class="pillar-card"><h3>信任證據</h3><p>用價格、路線、流程、截圖、留言 FAQ、實測前後對照建立可信度。</p></article>
+        <article class="pillar-card"><h3>互動活動</h3><p>用投票、留言徵題、行程二選一、避雷投稿，讓觀眾把下一支影片題目交給你。</p></article>
+        <article class="pillar-card"><h3>轉換入口</h3><p>把收藏、私訊、表單、LINE、電子報或行程包設計成收口，不要只追單支影片觀看。</p></article>
+      </div>
+
+      <div class="platform-grid" aria-label="平台分工">
+        <article class="platform-card"><h3>IG</h3><p>主攻 Reels 與輪播收藏。題型用「3 個避雷」「第一次去先看」「地區路線比較」。</p></article>
+        <article class="platform-card"><h3>Threads（脆）</h3><p>建立人格與觀點。用短句拆日本生活觀察、旅遊爭議、文化差異與留言問答。</p></article>
+        <article class="platform-card"><h3>YouTube</h3><p>Shorts 做入口，長片做信任。高討論題材要延伸成 FAQ、完整路線與實測。</p></article>
+        <article class="platform-card"><h3>Facebook</h3><p>接社團討論與地方族群。適合自由行、親子旅遊、熟齡旅遊與在日生活議題。</p></article>
+        <article class="platform-card"><h3>抖音</h3><p>只取短影音節奏，不照搬大陸口吻。所有話術要台灣化，避免逼單與誇張承諾。</p></article>
+        <article class="platform-card"><h3>LINE / Discord</h3><p>LINE 做提醒、回訪、行程包收口；Discord 做核心粉絲徵題、測評與共創任務。</p></article>
+      </div>
+
+      <div class="source-note">
+        選題來源等級：本頁依公開影片與頻道資料整理，屬於 C 級社群內容來源。可用來做內容靈感、受眾語言、鉤子與情境，不可直接當市場規模、全體消費者結論或投放成效承諾。
+      </div>
+      <div class="playbook-grid followup">
+        <article class="playbook-card">
+          <h3>鈴木的日常怎麼放</h3>
+          <p>它不列入「旅日台灣人創作者」核心樣本，因為創作者身份是日本人，主題不是台灣人旅居日本。</p>
+          <p>但它可以備著，作為「日本人如何讓台灣觀眾產生情緒共鳴」的轉譯樣本，尤其適合拆互動、留言、文化靠近感與人物關係。</p>
+        </article>
+        <article class="playbook-card bright">
+          <h3>轉譯創作思路</h3>
+          <p><strong>身份不要照抄：</strong>不要把日本人視角硬改成旅日台灣人視角。</p>
+          <p><strong>結構可以轉譯：</strong>把「日本人走進台灣」轉成「台灣人第一次真正理解日本地方生活」。</p>
+          <p><strong>情緒可以借用：</strong>保留陌生、靠近、被接納、語言不安、文化衝擊這些情緒，再換成旅日台灣人的場景。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section" id="positioning">
+      <div class="section-head">
+        <div class="section-kicker">新類創作者定位</div>
+        <h2>定位不是「我也在日本」，而是「我幫誰判斷日本」。</h2>
+        <p class="lead typewriter" data-typewriter="建議把新類旅日創作者定義成「台灣人的日本判斷入口」。核心不是炫景點，而是把日本生活、旅遊、制度、價格與文化差異翻成台灣人看得懂、用得上的內容。">建議把新類旅日創作者定義成「台灣人的日本判斷入口」。核心不是炫景點，而是把日本生活、旅遊、制度、價格與文化差異翻成台灣人看得懂、用得上的內容。</p>
+      </div>
+      <div class="position-grid">
+        <article class="position-card primary">
+          <h3>核心定位</h3>
+          <p>台灣人的日本生活與旅遊判斷入口。</p>
+          <ul>
+            <li>不是景點搬運者，而是資訊翻譯者。</li>
+            <li>不是只拍漂亮，而是幫觀眾少踩雷。</li>
+            <li>不是單支爆紅，而是建立可追蹤欄目。</li>
+          </ul>
+        </article>
+        <article class="position-card">
+          <h3>目標受眾</h3>
+          <p>第一次自由行、想深度旅遊、想旅居日本、關心日本生活成本、需要台灣語境解釋的人。</p>
+          <ul>
+            <li>怕踩雷，需要清單與流程。</li>
+            <li>想理解制度，需要白話解釋。</li>
+            <li>想感受生活，需要真實情境。</li>
+          </ul>
+        </article>
+        <article class="position-card">
+          <h3>人格語氣</h3>
+          <p>像懂日本的朋友，不像旅行社，也不像冷冰冰資料庫。</p>
+          <ul>
+            <li>語氣：直接、清楚、有一點吐槽。</li>
+            <li>證據：價格、路線、截圖、留言、實測。</li>
+            <li>收口：收藏、留言提問、私訊拿清單。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section" id="topic-bank">
+      <div class="section-head">
+        <div class="section-kicker">20 個旅日內容候選題</div>
+        <h2>先用題庫測受眾，不要急著做大系列。</h2>
+        <p class="lead">來源等級為 C 級公開社群內容觀察，可作選題靈感與鉤子，不可直接當市場結論。每題都可拆成 IG Reels、YouTube Shorts、Threads 或輪播。</p>
+      </div>
+      <div class="topic-grid">
+        <article class="topic-card"><span class="tag hot">痛點型</span><h3>第一次去日本最容易誤會的 5 件事</h3><p>Hook：你以為很基本，但第一次去真的會卡住。</p></article>
+        <article class="topic-card"><span class="tag cyan">比較型</span><h3>東京、大阪、福岡，第一次自由行先選哪裡</h3><p>Hook：不要問哪個最好玩，要問你是哪種旅人。</p></article>
+        <article class="topic-card"><span class="tag">情境型</span><h3>在日本點餐尷尬時，台灣人怎麼救場</h3><p>Hook：不會日文不是問題，問題是不知道流程。</p></article>
+        <article class="topic-card"><span class="tag">反差型</span><h3>日本很方便，但有些地方比台灣麻煩</h3><p>Hook：住過才知道，方便和麻煩常常同時存在。</p></article>
+        <article class="topic-card"><span class="tag hot">教學型</span><h3>日本退稅新制，台灣旅客要先懂什麼</h3><p>Hook：你不是少買，是少準備流程。</p></article>
+        <article class="topic-card"><span class="tag cyan">證據型</span><h3>日本一餐到底多少錢，用一日三餐實測</h3><p>Hook：不要只看網美餐廳，看真正會花在哪裡。</p></article>
+        <article class="topic-card"><span class="tag">人物型</span><h3>台灣人剛到日本最常被打擊的瞬間</h3><p>Hook：不是語言，是你突然不知道怎麼做一件小事。</p></article>
+        <article class="topic-card"><span class="tag">趨勢型</span><h3>2026 日本旅遊變貴後，還值得去嗎</h3><p>Hook：答案不是去或不去，是玩法要改。</p></article>
+        <article class="topic-card"><span class="tag hot">互動型</span><h3>你去日本最怕哪個場景，留言我做攻略</h3><p>Hook：把觀眾留言變成下一批題目。</p></article>
+        <article class="topic-card"><span class="tag cyan">轉換型</span><h3>收藏這張日本自由行出發前檢查表</h3><p>Hook：出發前一天看，比到機場才查好。</p></article>
+        <article class="topic-card"><span class="tag">比較型</span><h3>住飯店、民宿、膠囊旅館，誰適合誰</h3><p>Hook：便宜不一定省，錯配才最貴。</p></article>
+        <article class="topic-card"><span class="tag">證據型</span><h3>日本交通票券到底有沒有省，實際算一次</h3><p>Hook：很多票券不是不好，是你行程不適合。</p></article>
+        <article class="topic-card"><span class="tag hot">情境型</span><h3>下雨天的日本行程怎麼改才不崩潰</h3><p>Hook：雨天不是取消行程，是換玩法。</p></article>
+        <article class="topic-card"><span class="tag cyan">痛點型</span><h3>日本排隊文化，台灣人最容易踩到哪條線</h3><p>Hook：你不是沒禮貌，你是不知道默契。</p></article>
+        <article class="topic-card"><span class="tag">教學型</span><h3>便利商店、超市、藥妝店，第一天怎麼買</h3><p>Hook：第一天不要亂買，先買會救命的東西。</p></article>
+        <article class="topic-card"><span class="tag">反差型</span><h3>日本人覺得普通，台灣人會超驚訝的生活細節</h3><p>Hook：文化差異常常藏在小動作裡。</p></article>
+        <article class="topic-card"><span class="tag hot">人物型</span><h3>想搬日本前，先問自己這 5 個問題</h3><p>Hook：喜歡日本，跟適合住日本，是兩件事。</p></article>
+        <article class="topic-card"><span class="tag cyan">趨勢型</span><h3>北海道、九州、關西，地方旅遊怎麼挑</h3><p>Hook：不要只用地名選，要用旅行目的選。</p></article>
+        <article class="topic-card"><span class="tag">互動型</span><h3>你最想看哪個日本城市的真實生活成本</h3><p>Hook：用投票決定下一支實測。</p></article>
+        <article class="topic-card"><span class="tag">轉換型</span><h3>私訊拿日本初旅清單，我用台灣語境整理</h3><p>Hook：把觀看轉成名單與長期關係。</p></article>
+      </div>
+    </section>
+
+    <section class="shell section" id="comment-intelligence">
+      <div class="section-head">
+        <div class="section-kicker">留言萃取與受眾側寫</div>
+        <h2>先看留言在吵什麼，再判斷題庫是否準。</h2>
+        <p class="lead typewriter" data-typewriter="已補抓核心白名單 18 支影片、1659 則 top-level 留言，並取得真實 reply_count。這批資料可用來重排題庫，但仍屬 C 級公開社群線索。">已補抓核心白名單 18 支影片、1659 則 top-level 留言，並取得真實 reply_count。這批資料可用來重排題庫，但仍屬 C 級公開社群線索。</p>
+      </div>
+
+      <div class="comment-lab-grid">
+        <article class="comment-panel">
+          <span class="tag hot">Audience Signal Lab</span>
+          <h3>三類排行方法</h3>
+          <p>每則留言保留文字、影片來源、頻道、點讚數與 reply_count，再依「點讚強度、真實回覆性、內容相似性」分三條線排序。這不是單純抓熱門留言，而是把觀眾的訴求與感受拆成可檢查的題庫證據。</p>
+          <div class="comment-kpis">
+            <div class="comment-kpi"><strong>1659</strong><span>核心留言樣本</span></div>
+            <div class="comment-kpi"><strong>1651</strong><span>留言串回覆量</span></div>
+            <div class="comment-kpi"><strong>18</strong><span>補抓影片</span></div>
+          </div>
+        </article>
+        <article class="comment-panel">
+          <span class="tag cyan">Scoring Bridge</span>
+          <h3>題庫確切性評分</h3>
+          <p>題目不是先問「我想拍什麼」，而是先看留言是否反覆出現同一種訴求。分數越高，代表這題更能接住受眾已經說出口的疑問、焦慮或期待。</p>
+          <div class="score-formula">
+            <code>題庫確切性 = 35% 留言相似度 + 25% 點讚強度 + 20% 回覆性 + 10% 白名單覆蓋 + 10% 可拍攝性</code>
+          </div>
+        </article>
+      </div>
+
+      <div class="comment-rank-grid">
+        <article class="comment-rank-card">
+          <span class="tag hot">點讚強度</span>
+          <h3>高共鳴留言榜</h3>
+          <p>用點讚數抓出已被觀眾集體認可的感受。新版樣本顯示「情緒陪伴與人物故事」點讚最高，其次是移居勇氣與地方體驗。</p>
+          <div class="rank-lines">
+            <div class="rank-line"><b>1</b><span>情緒陪伴與人物故事：506 則，4828 讚，592 回覆。</span></div>
+            <div class="rank-line"><b>2</b><span>移居勇氣與現實：135 則，3066 讚，301 回覆。</span></div>
+            <div class="rank-line"><b>3</b><span>行程路線與地方體驗：338 則，2359 讚，364 回覆。</span></div>
+          </div>
+        </article>
+        <article class="comment-rank-card">
+          <span class="tag">回覆性</span>
+          <h3>可接話題榜</h3>
+          <p>這版已補到真實 reply_count，不再只用問句 proxy。最高回覆集中在「住日本現實」「觀光列車互動」「制度不便與退稅」。</p>
+          <div class="rank-lines">
+            <div class="rank-line"><b>26</b><span>住日本不是濾鏡：生活代價與心理落差最容易引發討論。</span></div>
+            <div class="rank-line"><b>25</b><span>地方旅遊互動：觀光列車、商店街、城市選擇可做連載題。</span></div>
+            <div class="rank-line"><b>15</b><span>退稅與制度變動：流程不便、代買拒絕、機場風險可做教學題。</span></div>
+          </div>
+        </article>
+        <article class="comment-rank-card">
+          <span class="tag cyan">相似性</span>
+          <h3>訴求聚類榜</h3>
+          <p>把文字依感受與需求聚類，不只看關鍵字。新版分成情緒陪伴、地方體驗、制度流程、移居現實、成本預算、避雷安全感。</p>
+          <div class="rank-lines">
+            <div class="rank-line"><b>1</b><span>地方體驗：北海道、九州、關西與觀光列車可先做系列。</span></div>
+            <div class="rank-line"><b>2</b><span>制度流程：退稅、交通、排隊與生活規則適合做教學題。</span></div>
+            <div class="rank-line"><b>3</b><span>移居現實：想搬日本前的心理、收入、語言與生活代價。</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="section-head" style="margin-top: 24px;">
+        <div class="section-kicker">題庫確切性 Top 10</div>
+        <h2>先拍這 10 題，讓觀眾替下一輪投票。</h2>
+        <p class="lead">公式：35% 留言相似度、25% 點讚強度、20% 真實回覆性、10% 白名單覆蓋、10% 可拍攝性。這是內容排序，不是市場規模結論。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>排序</th>
+              <th>題目</th>
+              <th>類型</th>
+              <th class="num">確切性</th>
+              <th class="num">留言</th>
+              <th class="num">讚</th>
+              <th class="num">回覆</th>
+              <th>品牌社群處理</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>北海道、九州、關西，地方旅遊怎麼挑</td><td>趨勢型</td><td class="num">97.3</td><td class="num">100</td><td class="num">312</td><td class="num">111</td><td>開月度主系列，用投票決定下一個城市。</td></tr>
+            <tr><td>2</td><td>日本退稅新制，台灣旅客要先懂什麼</td><td>教學型</td><td class="num">55.3</td><td class="num">51</td><td class="num">584</td><td class="num">33</td><td>做保存型教學，接清單與 FAQ。</td></tr>
+            <tr><td>3</td><td>想搬日本前，先問自己這 5 個問題</td><td>人物型</td><td class="num">55.3</td><td class="num">25</td><td class="num">1348</td><td class="num">77</td><td>做高共鳴觀點片，接留言徵題。</td></tr>
+            <tr><td>4</td><td>住飯店、民宿、膠囊旅館，誰適合誰</td><td>比較型</td><td class="num">47.8</td><td class="num">44</td><td class="num">285</td><td class="num">43</td><td>做比較表與旅人類型分流。</td></tr>
+            <tr><td>5</td><td>日本交通票券到底有沒有省，實際算一次</td><td>證據型</td><td class="num">44.5</td><td class="num">20</td><td class="num">366</td><td class="num">46</td><td>做算式型短片，接下載表單。</td></tr>
+            <tr><td>6</td><td>下雨天的日本行程怎麼改才不崩潰</td><td>情境型</td><td class="num">41.1</td><td class="num">29</td><td class="num">179</td><td class="num">52</td><td>做情境救場題，適合 Reels。</td></tr>
+            <tr><td>7</td><td>日本一餐到底多少錢，用一日三餐實測</td><td>證據型</td><td class="num">39.5</td><td class="num">18</td><td class="num">248</td><td class="num">47</td><td>做成本實測，接城市成本投票。</td></tr>
+            <tr><td>8</td><td>在日本點餐尷尬時，台灣人怎麼救場</td><td>情境型</td><td class="num">37.7</td><td class="num">16</td><td class="num">314</td><td class="num">36</td><td>做流程救場，適合系列化。</td></tr>
+            <tr><td>9</td><td>你去日本最怕哪個場景，留言我做攻略</td><td>互動型</td><td class="num">33.3</td><td class="num">12</td><td class="num">324</td><td class="num">44</td><td>做留言徵題，回收下一輪題庫。</td></tr>
+            <tr><td>10</td><td>2026 日本旅遊變貴後，還值得去嗎</td><td>趨勢型</td><td class="num">33.0</td><td class="num">15</td><td class="num">232</td><td class="num">37</td><td>做觀點題，接預算與替代玩法。</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section-head" id="audience-debate" style="margin-top: 24px;">
+        <div class="section-kicker">Top reply 回覆串展開</div>
+        <h2>觀眾互相吵什麼：不是資訊不足，是立場、經驗與焦慮在碰撞。</h2>
+        <p class="lead typewriter" data-typewriter="已展開 45 條高回覆留言串、409 則回覆文字。這裡只做匿名化歸納，用來修正題庫與腳本語氣，不把單一留言外推成全市場。">已展開 45 條高回覆留言串、409 則回覆文字。這裡只做匿名化歸納，用來修正題庫與腳本語氣，不把單一留言外推成全市場。</p>
+      </div>
+
+      <div class="debate-grid">
+        <article class="comment-rank-card">
+          <span class="tag hot">吵點 1 / 36 串</span>
+          <h3>台日社會文化與身份認同</h3>
+          <p>討論會從影片內容外溢到台日社會比較、排外、公共資源、自由與紀律。這類題不能用「誰比較好」收束，要用第一人稱觀察降低對立。</p>
+          <div class="rank-lines">
+            <div class="rank-line"><b>154</b><span>相關留言與回覆，原留言合計 2688 讚。</span></div>
+            <div class="rank-line"><b>轉譯</b><span>文化題改成「我看到的差異」與「台灣人怎麼理解」。</span></div>
+          </div>
+        </article>
+        <article class="comment-rank-card">
+          <span class="tag">吵點 2 / 30 串</span>
+          <h3>日本適合旅遊，還是適合生活</h3>
+          <p>一邊覺得日本乾淨、安全、距離感舒服；另一邊提醒工作、語言、收入、社會壓力與孤獨感會打破濾鏡。</p>
+          <div class="rank-lines">
+            <div class="rank-line"><b>81</b><span>相關留言與回覆，原留言合計 2251 讚。</span></div>
+            <div class="rank-line"><b>轉譯</b><span>搬日本題做成自評清單，不做勸退，也不賣夢。</span></div>
+          </div>
+        </article>
+        <article class="comment-rank-card">
+          <span class="tag cyan">吵點 3 / 27 串</span>
+          <h3>創作者更新、信任與互動感</h3>
+          <p>高回覆不一定都是爭論，也常出現在創作者回覆、更新頻率、觀眾調侃與支持。這是題庫回收的入口。</p>
+          <div class="rank-lines">
+            <div class="rank-line"><b>57</b><span>相關留言與回覆，原留言合計 1880 讚。</span></div>
+            <div class="rank-line"><b>轉譯</b><span>每支片尾都要設計投票、留言題、清單領取或下一集選擇。</span></div>
+          </div>
+        </article>
+        <article class="comment-rank-card">
+          <span class="tag hot">吵點 4 / 26 串</span>
+          <h3>地方旅遊要追熱門，還是深度慢遊</h3>
+          <p>有人要高效率打卡，有人要商店街、觀光列車、深夜散步。真正問題不是哪裡最好玩，而是旅人類型不同。</p>
+          <div class="rank-lines">
+            <div class="rank-line"><b>56</b><span>相關留言與回覆，原留言合計 2008 讚。</span></div>
+            <div class="rank-line"><b>轉譯</b><span>Top 1 改成「旅人類型選擇器」，不做景點百科。</span></div>
+          </div>
+        </article>
+        <article class="comment-rank-card">
+          <span class="tag">吵點 5 / 22 串</span>
+          <h3>成本、預算與現實細節</h3>
+          <p>觀眾會用收入、房租、退休、家庭責任、餐費與住宿來衡量日本想像是否可承受。只講感受不夠，需要具體情境。</p>
+          <div class="rank-lines">
+            <div class="rank-line"><b>51</b><span>相關留言與回覆，原留言合計 1684 讚。</span></div>
+            <div class="rank-line"><b>轉譯</b><span>成本題做一日三餐、住宿、交通票券與移居前現金流表。</span></div>
+          </div>
+        </article>
+        <article class="comment-rank-card">
+          <span class="tag cyan">吵點 6 / 8 串</span>
+          <h3>退稅新制與公平感</h3>
+          <p>觀眾不是只問流程，也在吵「少數濫用讓多數旅客變麻煩」的公平感。腳本要先安撫焦慮，再給步驟。</p>
+          <div class="rank-lines">
+            <div class="rank-line"><b>18</b><span>相關留言與回覆，原留言合計 893 讚。</span></div>
+            <div class="rank-line"><b>轉譯</b><span>制度題避免站隊，聚焦台灣旅客如何降低卡關。</span></div>
+          </div>
+        </article>
+      </div>
+
+      <div class="audience-grid">
+        <article class="audience-card">
+          <span class="tag hot">側寫 A</span>
+          <h3>地方探索型</h3>
+          <p>想知道北海道、九州、關西怎麼挑。對應題目：地方旅遊怎麼挑、雨天行程怎麼改。</p>
+        </article>
+        <article class="audience-card">
+          <span class="tag cyan">側寫 B</span>
+          <h3>制度流程型</h3>
+          <p>怕退稅、票券、交通和機場流程出錯。對應題目：退稅新制、交通票券省不省。</p>
+        </article>
+        <article class="audience-card">
+          <span class="tag">側寫 C</span>
+          <h3>移居現實型</h3>
+          <p>被「想搬日本」吸引，但想知道語言、收入、心理和生活代價。對應題目：想搬日本前 5 問。</p>
+        </article>
+        <article class="audience-card">
+          <span class="tag">側寫 D</span>
+          <h3>成本避雷型</h3>
+          <p>關心住宿、交通、一日三餐和旅遊變貴後值不值得。對應題目：住宿比較、生活成本、2026 變貴。</p>
+        </article>
+      </div>
+
+      <div class="sampling-grid">
+        <article class="sampling-card">
+          <h3>第一層：白名單補深</h3>
+          <p>先抓白名單頻道更多歷史影片、置頂留言與高讚留言，補到 1000 則以上。鈴木的日常因為是日本人視角，只列轉譯備用樣本，不放進旅日台灣人核心分數。</p>
+        </article>
+        <article class="sampling-card">
+          <h3>第二層：相鄰創作者</h3>
+          <p>若白名單不足，擴到非白名單但同題材的旅日台灣創作者，例如日本生活、地方旅遊、留學、打工度假與移居經驗。</p>
+        </article>
+        <article class="sampling-card">
+          <h3>第三層：社群討論爬蟲</h3>
+          <p>再抓 YouTube 搜尋結果、Threads、Facebook 社團、Reddit、論壇與 Google 相關討論。來源需標示等級與限制，只用於題庫驗證，不直接當市場結論。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section" id="short-video-routes">
+      <div class="section-head">
+        <div class="section-kicker">3 條短影音主軸提案</div>
+        <h2>前三題交給影片提案，先拍出可驗證的短影音。</h2>
+        <p class="lead typewriter" data-typewriter="前三題來自 1659 則留言的題庫確切性排序。每條都有策略、3 秒 hook、30 秒腳本節奏與拍攝建議。">前三題來自 1659 則留言的題庫確切性排序。每條都有策略、3 秒 hook、30 秒腳本節奏與拍攝建議。</p>
+      </div>
+      <div class="route-grid">
+        <article class="route-card">
+          <span class="tag hot">Top 1 / 趨勢型</span>
+          <h3>北海道、九州、關西，地方旅遊怎麼挑</h3>
+          <p><strong>策略：</strong>把「想去日本但不知道去哪」變成可互動的城市選擇器。用留言投票決定下一支，讓觀眾參與題庫。</p>
+          <ul>
+            <li>適合平台：IG Reels、Threads、YouTube Shorts</li>
+            <li>核心訊息：不要只用地名選，用旅行目的選。</li>
+            <li>風險：不要變成百科介紹，一支只解一種旅人。</li>
+          </ul>
+          <div class="mini-script">
+            <div><strong>0-3 秒：</strong>地圖快速切北海道、九州、關西：第一次日本地方旅遊，不要先問哪裡最紅。</div>
+            <div><strong>3-10 秒：</strong>你拿三張色卡：想看自然選北海道，想慢旅選九州，想交通方便選關西。</div>
+            <div><strong>10-22 秒：</strong>每張卡給一個避雷：北海道移動遠、九州要排交通、關西人多但選擇多。</div>
+            <div><strong>22-30 秒：</strong>收口：留言你的旅人類型，我用留言投票做下一支城市選擇器。</div>
+          </div>
+        </article>
+        <article class="route-card">
+          <span class="tag">Top 2 / 教學型</span>
+          <h3>日本退稅新制，台灣旅客要先懂什麼</h3>
+          <p><strong>策略：</strong>把制度變動變成保存型教學，解決觀眾怕在機場卡住、怕代買麻煩、怕流程不懂的焦慮。</p>
+          <ul>
+            <li>適合平台：YouTube Shorts、IG Reels、IG 輪播</li>
+            <li>核心訊息：不是不能買，是流程要先懂。</li>
+            <li>風險：制度細節需持續查核，避免講成法律定論。</li>
+          </ul>
+          <div class="mini-script">
+            <div><strong>0-3 秒：</strong>手拿一袋藥妝衝到機場：日本退稅不是最後才想起來。</div>
+            <div><strong>3-10 秒：</strong>字幕拆三件事：誰能退、買完要留什麼、機場可能卡在哪。</div>
+            <div><strong>10-22 秒：</strong>用台灣旅客情境說明：幫同事代買、拆封、行李整理都可能影響流程。</div>
+            <div><strong>22-30 秒：</strong>收口：收藏這支，出發前看一次。留言「退稅」我整理檢查表。</div>
+          </div>
+        </article>
+        <article class="route-card">
+          <span class="tag">Top 3 / 人物型</span>
+          <h3>想搬日本前，先問自己這 5 個問題</h3>
+          <p><strong>策略：</strong>把高讚共鳴轉成新類創作者的觀點入口。用「喜歡日本」和「適合住日本」的差距建立信任。</p>
+          <ul>
+            <li>適合平台：YouTube Shorts、Threads、長片開場</li>
+            <li>核心訊息：搬日本不是勇敢就好，要先問清楚生活代價。</li>
+            <li>風險：不要勸退，也不要賣夢，要用提問幫觀眾自我判斷。</li>
+          </ul>
+          <div class="mini-script">
+            <div><strong>0-3 秒：</strong>你站在日本街頭說：喜歡日本，跟適合住日本，是兩件事。</div>
+            <div><strong>3-12 秒：</strong>五個問題快切：日文、收入、孤獨感、工作壓力、回台成本。</div>
+            <div><strong>12-24 秒：</strong>挑兩題展開：不會日文能不能辦事，收入能不能撐住房租和保險。</div>
+            <div><strong>24-30 秒：</strong>收口：留言你最卡哪一題，我下一支做搬日本前的現實檢查。</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section" id="storyboards">
+      <div class="section-head">
+        <div class="section-kicker">Top 3 完整分鏡與素材清單</div>
+        <h2>把高分題目拆成可以開拍的 30 秒短影音。</h2>
+        <p class="lead">三支都用同一個節奏：3 秒反直覺 hook、15 秒判斷框架、8 秒避雷、4 秒留言回收。重點不是把日本講完，而是讓觀眾知道下一步怎麼選。</p>
+      </div>
+      <div class="production-grid">
+        <article class="production-card">
+          <span class="tag hot">Top 1 / 地方旅遊選擇器</span>
+          <h3>北海道、九州、關西，地方旅遊怎麼挑</h3>
+          <p>策略：把「去哪裡」改成「我是什麼旅人」。這支最適合做月度主系列第一集。</p>
+          <div class="shot-list">
+            <div class="shot-row"><b>0-3</b><span>三張地圖卡高速切換。字幕：第一次地方旅遊，不要先選城市。</span></div>
+            <div class="shot-row"><b>3-7</b><span>主持人把三張色卡貼到畫面：自然、慢旅、方便。</span></div>
+            <div class="shot-row"><b>7-13</b><span>北海道卡：自然、雪景、開闊感。避雷：移動距離長。</span></div>
+            <div class="shot-row"><b>13-19</b><span>九州卡：溫泉、火山、地方感。避雷：交通要先排。</span></div>
+            <div class="shot-row"><b>19-25</b><span>關西卡：交通、城市、第一次友善。避雷：熱門區人多。</span></div>
+            <div class="shot-row"><b>25-30</b><span>收口投票：留言你的旅人類型，我做下一支城市選擇器。</span></div>
+          </div>
+          <div class="material-list">
+            <strong>拍攝素材：</strong>
+            <ul>
+              <li>日本地圖底圖、北海道 / 九州 / 關西三色標籤。</li>
+              <li>自然景、車站、商店街、觀光列車、行李箱 B-roll。</li>
+              <li>三張手持卡：自然派、慢旅派、效率派。</li>
+              <li>手機投票畫面、留言截圖模擬、城市候選清單。</li>
+            </ul>
+          </div>
+        </article>
+        <article class="production-card">
+          <span class="tag">Top 2 / 退稅保存教學</span>
+          <h3>日本退稅新制，台灣旅客要先懂什麼</h3>
+          <p>策略：先接住公平感與焦慮，再給出發前檢查表。這支要避免講成法律定論，全部用「出發前確認」語氣。</p>
+          <div class="shot-list">
+            <div class="shot-row"><b>0-3</b><span>藥妝袋、護照、收據快切。字幕：退稅不是最後才想起來。</span></div>
+            <div class="shot-row"><b>3-7</b><span>畫面拆三格：誰能退、買完留什麼、機場卡哪裡。</span></div>
+            <div class="shot-row"><b>7-13</b><span>情境一：幫同事代買，字幕提醒先確認規則與用途。</span></div>
+            <div class="shot-row"><b>13-19</b><span>情境二：拆封、混裝、行李重排，用紅色警示條做提醒。</span></div>
+            <div class="shot-row"><b>19-25</b><span>情境三：機場時間不夠，畫面顯示「多抓 30 分鐘」。</span></div>
+            <div class="shot-row"><b>25-30</b><span>收口：收藏，出發前看一次。留言「退稅」領檢查表。</span></div>
+          </div>
+          <div class="material-list">
+            <strong>拍攝素材：</strong>
+            <ul>
+              <li>購物袋、護照套、收據、行李箱、手機備忘錄。</li>
+              <li>三步驟資訊卡：資格、憑證、機場流程。</li>
+              <li>警示貼紙：拆封、代買、時間不足、規則更新。</li>
+              <li>官方資訊查核畫面截圖模板，避免資訊過期。</li>
+            </ul>
+          </div>
+        </article>
+        <article class="production-card">
+          <span class="tag cyan">Top 3 / 移居自評清單</span>
+          <h3>想搬日本前，先問自己這 5 個問題</h3>
+          <p>策略：用提問幫觀眾自我判斷，不勸退也不浪漫化。這支最能建立新類創作者的觀點信任。</p>
+          <div class="shot-list">
+            <div class="shot-row"><b>0-3</b><span>街頭或窗邊定鏡。字幕：喜歡日本，跟適合住日本，是兩件事。</span></div>
+            <div class="shot-row"><b>3-7</b><span>五張問題卡快速落下：日文、收入、孤獨、工作、回台成本。</span></div>
+            <div class="shot-row"><b>7-13</b><span>問題一：不會日文時，能不能處理辦事與醫療。</span></div>
+            <div class="shot-row"><b>13-19</b><span>問題二：收入能不能撐住房租、保險、交通與備用金。</span></div>
+            <div class="shot-row"><b>19-25</b><span>問題三：你能接受朋友家人不在身邊的日常嗎。</span></div>
+            <div class="shot-row"><b>25-30</b><span>收口：留言你最卡哪一題，我做搬日本前現實檢查表。</span></div>
+          </div>
+          <div class="material-list">
+            <strong>拍攝素材：</strong>
+            <ul>
+              <li>日本街景、租屋資料、交通票、生活費筆記本。</li>
+              <li>五張問題卡與自評分數貼紙。</li>
+              <li>手機日文翻譯、行政文件示意、保險 / 房租支出表。</li>
+              <li>留言徵題模板：語言、收入、孤獨、職涯、家庭責任。</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section" id="first-script">
+      <div class="section-head">
+        <div class="section-kicker">第一支可拍攝腳本</div>
+        <h2>地方旅遊怎麼挑：先做成「旅人類型測驗」。</h2>
+        <p class="lead typewriter" data-typewriter="這支不是景點介紹，而是幫台灣觀眾用目的、交通耐受度、季節與預算先排除錯誤選擇。">這支不是景點介紹，而是幫台灣觀眾用目的、交通耐受度、季節與預算先排除錯誤選擇。</p>
+      </div>
+      <article class="shoot-card">
+        <span class="tag hot">30 秒直式短影音</span>
+        <h3>腳本：北海道、九州、關西，你其實適合哪一個？</h3>
+        <div class="mini-script">
+          <div><strong>0-3 秒 / Hook：</strong>「第一次日本地方旅遊，不要先問北海道、九州、關西哪個最好玩。先問你是哪種旅人。」</div>
+          <div><strong>3-8 秒 / 分流：</strong>「如果你想要大自然、雪景、開闊感，北海道優先。但你要接受移動距離很長。」</div>
+          <div><strong>8-14 秒 / 分流：</strong>「如果你想要溫泉、地方感、慢慢走，九州很適合。但交通要先排，不然每天都在趕車。」</div>
+          <div><strong>14-20 秒 / 分流：</strong>「如果你是第一次帶家人或旅伴，關西最穩。交通方便、選擇多，但熱門區人真的多。」</div>
+          <div><strong>20-26 秒 / 避雷：</strong>「所以不要用地名選日本，用旅行目的選。自然派、慢旅派、效率派，答案會完全不同。」</div>
+          <div><strong>26-30 秒 / CTA：</strong>「留言你是哪一派，我用留言投票做下一支：東京、京都、大阪，到底誰適合你。」</div>
+        </div>
+        <div class="cover-title-grid">
+          <div class="cover-title">第一次地方旅遊，不要先選城市</div>
+          <div class="cover-title">北海道、九州、關西，你適合哪個？</div>
+          <div class="cover-title">別再問哪裡最好玩，先問你是哪種旅人</div>
+          <div class="cover-title">日本地方旅遊選錯，真的會累爆</div>
+        </div>
+        <div class="material-list">
+          <strong>現場拍攝清單：</strong>
+          <ul>
+            <li>主持人半身畫面、桌面三張色卡、手機地圖、行李箱。</li>
+            <li>素材 B-roll：車站進站、列車窗景、商店街、自然景、家庭旅伴走路背影。</li>
+            <li>後製元素：三色地圖動線、旅人類型貼紙、避雷警示條、留言投票貼紙。</li>
+            <li>補拍備案：沒有日本素材時，可用地圖、照片授權圖、Google My Maps 風格示意與手持卡完成。</li>
+          </ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="shell section" id="calendar-30">
+      <div class="section-head">
+        <div class="section-kicker">30 天內容節奏</div>
+        <h2>前 10 題進品牌社群，排成一個月測試節奏。</h2>
+        <p class="lead">第 1 週測地方旅遊，第 2 週測制度流程，第 3 週測移居現實與成本，第 4 週用留言回收下一輪題庫。所有題目來源皆標為 C 級公開留言線索。</p>
+      </div>
+      <div class="calendar-grid">
+        <article class="calendar-card"><b>Day 1 / IG Reels</b><h3>北海道、九州、關西怎麼挑</h3><p>支柱：受眾痛點。CTA：留言旅人類型。</p></article>
+        <article class="calendar-card"><b>Day 2 / Threads</b><h3>不要用地名選日本，用目的選</h3><p>支柱：品牌觀點。CTA：轉發給旅伴。</p></article>
+        <article class="calendar-card"><b>Day 3 / Shorts</b><h3>三種旅人對應三個地方</h3><p>支柱：產品情境。CTA：投票下一城。</p></article>
+        <article class="calendar-card"><b>Day 4 / IG 輪播</b><h3>北海道、九州、關西比較表</h3><p>支柱：信任證據。CTA：收藏。</p></article>
+        <article class="calendar-card"><b>Day 5 / 限動</b><h3>你是哪種日本旅人</h3><p>支柱：互動活動。CTA：投票。</p></article>
+        <article class="calendar-card"><b>Day 6 / Facebook</b><h3>地方旅遊不是冷門，是玩法不同</h3><p>支柱：品牌觀點。CTA：分享。</p></article>
+        <article class="calendar-card"><b>Day 7 / LINE</b><h3>地方旅遊選擇清單</h3><p>支柱：轉換入口。CTA：領清單。</p></article>
+        <article class="calendar-card"><b>Day 8 / IG Reels</b><h3>日本退稅新制，台灣旅客先懂這 3 件事</h3><p>支柱：信任證據。CTA：收藏。</p></article>
+        <article class="calendar-card"><b>Day 9 / Threads</b><h3>不是不能買，是流程要先懂</h3><p>支柱：品牌觀點。CTA：留言退稅疑問。</p></article>
+        <article class="calendar-card"><b>Day 10 / Shorts</b><h3>機場退稅最怕卡在哪</h3><p>支柱：受眾痛點。CTA：留言經驗。</p></article>
+        <article class="calendar-card"><b>Day 11 / IG 輪播</b><h3>退稅、票券、交通一次整理</h3><p>支柱：信任證據。CTA：收藏比較表。</p></article>
+        <article class="calendar-card"><b>Day 12 / 限動</b><h3>退稅問題徵集</h3><p>支柱：互動活動。CTA：填問題箱。</p></article>
+        <article class="calendar-card"><b>Day 13 / Facebook</b><h3>交通票券到底有沒有省</h3><p>支柱：信任證據。CTA：留言行程。</p></article>
+        <article class="calendar-card"><b>Day 14 / LINE</b><h3>退稅檢查表收口</h3><p>支柱：轉換入口。CTA：加入名單。</p></article>
+        <article class="calendar-card"><b>Day 15 / IG Reels</b><h3>想搬日本前，先問自己這 5 題</h3><p>支柱：受眾痛點。CTA：留言最卡一題。</p></article>
+        <article class="calendar-card"><b>Day 16 / Threads</b><h3>喜歡日本和適合住日本不一樣</h3><p>支柱：品牌觀點。CTA：轉發。</p></article>
+        <article class="calendar-card"><b>Day 17 / Shorts</b><h3>不會日文，可以在日本生活嗎</h3><p>支柱：受眾痛點。CTA：留言問題。</p></article>
+        <article class="calendar-card"><b>Day 18 / IG 輪播</b><h3>日本生活成本實測格式</h3><p>支柱：信任證據。CTA：收藏模板。</p></article>
+        <article class="calendar-card"><b>Day 19 / 限動</b><h3>你想看哪個城市生活成本</h3><p>支柱：互動活動。CTA：城市投票。</p></article>
+        <article class="calendar-card"><b>Day 20 / Facebook</b><h3>住飯店、民宿、膠囊旅館怎麼選</h3><p>支柱：產品情境。CTA：留言旅伴類型。</p></article>
+        <article class="calendar-card"><b>Day 21 / LINE</b><h3>搬日本前自評表</h3><p>支柱：轉換入口。CTA：領取。</p></article>
+        <article class="calendar-card"><b>Day 22 / IG Reels</b><h3>雨天日本行程怎麼改才不崩潰</h3><p>支柱：產品情境。CTA：收藏備案。</p></article>
+        <article class="calendar-card"><b>Day 23 / Threads</b><h3>日本旅遊變貴後，玩法要改</h3><p>支柱：品牌觀點。CTA：留言預算。</p></article>
+        <article class="calendar-card"><b>Day 24 / Shorts</b><h3>在日本點餐尷尬時怎麼救場</h3><p>支柱：受眾痛點。CTA：留言最怕場景。</p></article>
+        <article class="calendar-card"><b>Day 25 / IG 輪播</b><h3>日本一餐到底多少錢</h3><p>支柱：信任證據。CTA：收藏預算。</p></article>
+        <article class="calendar-card"><b>Day 26 / 限動</b><h3>下一支救場題投票</h3><p>支柱：互動活動。CTA：投票。</p></article>
+        <article class="calendar-card"><b>Day 27 / Facebook</b><h3>本月留言最高問題回覆</h3><p>支柱：信任證據。CTA：留言補充。</p></article>
+        <article class="calendar-card"><b>Day 28 / Discord</b><h3>共創下一輪日本題庫</h3><p>支柱：互動活動。CTA：提交問題。</p></article>
+        <article class="calendar-card"><b>Day 29 / IG Reels</b><h3>前 10 題回顧，觀眾最想看哪個系列</h3><p>支柱：互動活動。CTA：留言排行。</p></article>
+        <article class="calendar-card"><b>Day 30 / LINE</b><h3>日本題庫與清單整理包</h3><p>支柱：轉換入口。CTA：領取整理包。</p></article>
+      </div>
+    </section>
+
+    <section class="shell section" id="platform-posting">
+      <div class="section-head">
+        <div class="section-kicker">IG / Shorts / Threads 實際發文表</div>
+        <h2>同一個題庫，不同平台用不同任務。</h2>
+        <p class="lead">IG 負責視覺與收藏，Shorts 負責 30 秒快速判斷，Threads 負責觀點、投票與留言回收。每 7 天做一次題庫回收，避免只排程不學習。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>日</th>
+              <th>主題任務</th>
+              <th>IG</th>
+              <th>YouTube Shorts</th>
+              <th>Threads</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>地方旅遊開場</td><td>Reels：三地圖色卡快切，CTA 留言旅人類型。</td><td>30 秒選擇器完整版。</td><td>發問：你選地方旅遊先看景點、交通還是預算？</td></tr>
+            <tr><td>2</td><td>觀點鋪陳</td><td>限動投票：自然派 / 慢旅派 / 效率派。</td><td>剪出 8 秒 hook 二剪。</td><td>短文：不要用地名選日本，用目的選。</td></tr>
+            <tr><td>3</td><td>北海道分支</td><td>輪播：北海道適合與不適合的人。</td><td>Shorts：北海道避雷 3 點。</td><td>問答串：你能接受一天移動多久？</td></tr>
+            <tr><td>4</td><td>九州分支</td><td>Reels：九州慢旅三格畫面。</td><td>Shorts：九州交通先排再出發。</td><td>收集：九州最想看的城市。</td></tr>
+            <tr><td>5</td><td>關西分支</td><td>輪播：第一次帶旅伴為何關西穩。</td><td>Shorts：關西方便但人多怎麼避。</td><td>投票：京都、大阪、神戶先做哪個？</td></tr>
+            <tr><td>6</td><td>留言回覆</td><td>限動回覆 3 則留言，標記下一支題目。</td><td>發布留言回覆短片。</td><td>整理本週留言排行。</td></tr>
+            <tr><td>7</td><td>週回收</td><td>IG 輪播：地方旅遊選擇表。</td><td>Shorts：一分鐘內選城市。</td><td>置頂投票，決定第 2 週教學題角度。</td></tr>
+            <tr><td>8</td><td>退稅教學開場</td><td>Reels：退稅不是最後才想起來。</td><td>30 秒三件事。</td><td>發問：你最怕退稅卡在哪？</td></tr>
+            <tr><td>9</td><td>流程保存</td><td>輪播：誰能退、留什麼、哪裡確認。</td><td>Shorts：機場卡關情境。</td><td>觀點：不是不能買，是流程要先懂。</td></tr>
+            <tr><td>10</td><td>代買風險</td><td>限動問答箱：代買疑問收集。</td><td>Shorts：幫買前先確認 3 件事。</td><td>討論串：代買最容易誤會的地方。</td></tr>
+            <tr><td>11</td><td>票券比較</td><td>輪播：交通票券實算模板。</td><td>Shorts：票券到底有沒有省。</td><td>收集一日行程，下一支幫算。</td></tr>
+            <tr><td>12</td><td>制度焦慮</td><td>Reels：出發前檢查表。</td><td>Shorts：30 秒退稅清單。</td><td>回覆高讚留言，避免站隊。</td></tr>
+            <tr><td>13</td><td>保存收口</td><td>輪播：退稅與交通 FAQ。</td><td>Shorts：三個不要。</td><td>發起：留言「退稅」整理下一版清單。</td></tr>
+            <tr><td>14</td><td>週回收</td><td>限動統計本週最多問題。</td><td>Shorts：本週退稅問題 Top 3。</td><td>置頂投票，決定移居題切角。</td></tr>
+            <tr><td>15</td><td>移居自評開場</td><td>Reels：喜歡日本不等於適合住日本。</td><td>30 秒五問完整版。</td><td>發問：如果搬日本，你最擔心哪一題？</td></tr>
+            <tr><td>16</td><td>語言問題</td><td>輪播：不會日文的辦事場景。</td><td>Shorts：不會日文能不能生活。</td><td>討論：旅遊日文與生活日文差在哪。</td></tr>
+            <tr><td>17</td><td>收入成本</td><td>Reels：房租、保險、交通三項成本。</td><td>Shorts：搬日本前現金流表。</td><td>收集：你想看哪個城市生活費？</td></tr>
+            <tr><td>18</td><td>孤獨感</td><td>限動匿名箱：你能接受一個人生活嗎？</td><td>Shorts：安靜與孤獨只差一線。</td><td>觀點文：距離感舒服，也可能變成孤立。</td></tr>
+            <tr><td>19</td><td>住宿題</td><td>輪播：飯店、民宿、膠囊旅館誰適合誰。</td><td>Shorts：住宿選錯會毀行程。</td><td>發問：你住旅館最在意哪件事？</td></tr>
+            <tr><td>20</td><td>成本實測</td><td>Reels：日本一日三餐預算。</td><td>Shorts：一餐到底多少錢。</td><td>收集城市與餐費樣本。</td></tr>
+            <tr><td>21</td><td>週回收</td><td>輪播：移居前自評表。</td><td>Shorts：五問回顧。</td><td>置頂投票，決定救場題。</td></tr>
+            <tr><td>22</td><td>雨天救場</td><td>Reels：雨天行程不是取消，是換玩法。</td><td>Shorts：雨天備案 3 類。</td><td>發問：日本下雨你最崩潰什麼？</td></tr>
+            <tr><td>23</td><td>旅遊變貴</td><td>輪播：預算改法。</td><td>Shorts：2026 變貴還值得去嗎。</td><td>討論：你覺得多少預算才合理？</td></tr>
+            <tr><td>24</td><td>點餐救場</td><td>Reels：點餐尷尬三句話。</td><td>Shorts：點餐救場流程。</td><td>收集最怕場景。</td></tr>
+            <tr><td>25</td><td>文化差異</td><td>輪播：台灣人容易誤會的日本默契。</td><td>Shorts：排隊與安靜規則。</td><td>觀點：用觀察取代批判。</td></tr>
+            <tr><td>26</td><td>留言回覆</td><td>限動回 5 則高互動留言。</td><td>Shorts：觀眾問題回答。</td><td>整理本月吵點排行。</td></tr>
+            <tr><td>27</td><td>題庫再測</td><td>Reels：本月最值得先拍 10 題。</td><td>Shorts：前三題快速回顧。</td><td>發起下一輪題庫募集。</td></tr>
+            <tr><td>28</td><td>共創日</td><td>限動投票與問答箱。</td><td>Shorts：留言決定下一支。</td><td>開串：把你的日本問題丟上來。</td></tr>
+            <tr><td>29</td><td>總結轉換</td><td>輪播：日本初旅判斷表。</td><td>Shorts：30 天學到的三件事。</td><td>置頂整理包清單。</td></tr>
+            <tr><td>30</td><td>資料回收</td><td>Reels：下月系列預告。</td><td>Shorts：下月第一支預告。</td><td>公布投票結果與下月題庫。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="shell section">
+      <div class="section-head">
+        <div class="section-kicker">內容提案轉譯</div>
+        <h2>從榜單走到可拍題目。</h2>
+        <p class="lead">評級只解決先找誰。真正能進提案的，是把頻道特性轉成品牌可用的內容角度。</p>
+      </div>
+      <div class="idea-grid">
+        <article class="idea-card">
+          <h3>旅日生活感</h3>
+          <ul>
+            <li>台灣人住日本才知道的生活成本、制度與文化差異。</li>
+            <li>用長住者視角重排東京、大阪、北海道、福岡路線。</li>
+            <li>把旅遊攻略升級成真實避雷與長住觀察。</li>
+          </ul>
+        </article>
+        <article class="idea-card">
+          <h3>短影音入口</h3>
+          <ul>
+            <li>用高觀看題材做流量入口，再導回旅日深度內容。</li>
+            <li>適合快節奏 hook、地區清單、價格比較。</li>
+            <li>把留言爭議轉成下一支影片提問。</li>
+          </ul>
+        </article>
+        <article class="idea-card">
+          <h3>品牌合作切口</h3>
+          <ul>
+            <li>旅遊用品、交通票券、生活服務、住宿體驗可先測。</li>
+            <li>先做單支主題合作，再看留言與轉換線索。</li>
+            <li>非核心爆量頻道先人工確認受眾來源。</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section" id="next">
+      <div class="section-head">
+        <div class="section-kicker">下一步</div>
+        <h2>把酷感頁面接回工作流。</h2>
+        <p class="lead">這頁可以當展示版。下一步要補查核欄位，才能變成正式合作開發工具。</p>
+      </div>
+      <div class="next-grid">
+        <article class="next-card"><b>優先 1</b><h3>合作資訊確認</h3><p>打開前 5 名頻道 About、IG、合作信箱，標註是否接業配。</p></article>
+        <article class="next-card"><b>優先 2</b><h3>挑 3 位候選</h3><p>用內容熱度、核心題材占比、品牌適配度挑第一批合作觀察名單。</p></article>
+        <article class="next-card"><b>優先 3</b><h3>產出 10 支 hook</h3><p>把旅日視角與短期旅遊視角做成雙軌短影音題目。</p></article>
+        <article class="next-card"><b>優先 4</b><h3>持續快照</h3><p>下週同日追加第二筆 subscriberCount，累積 4 週後再看成長率。</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <p>資料來源：YouTube Data API 公開影片與頻道統計；內部整理日期：2026-07-03。資料僅作內容與合作初篩，不作市場規模或訂閱成長率結論。</p>
+  </footer>
+  <script>
+    (() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const revealTargets = document.querySelectorAll([
+        ".signal-card",
+        ".paper-card",
+        ".dark-card",
+        ".creator-card",
+        ".short-card",
+        ".video-card",
+        ".playbook-card",
+        ".pillar-card",
+        ".platform-card",
+        ".position-card",
+        ".topic-card",
+        ".comment-panel",
+        ".comment-rank-card",
+        ".audience-card",
+        ".sampling-card",
+        ".route-card",
+        ".production-card",
+        ".shoot-card",
+        ".calendar-card",
+        ".idea-card",
+        ".next-card"
+      ].join(","));
+
+      if (!reduceMotion) {
+        document.documentElement.classList.add("motion-ready");
+        revealTargets.forEach((el, index) => {
+          el.classList.add("reveal-target");
+          el.style.setProperty("--reveal-index", String(index % 8));
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          });
+        }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+
+        revealTargets.forEach((el) => revealObserver.observe(el));
+      }
+
+      const typewriterTargets = document.querySelectorAll("[data-typewriter]");
+      const typeText = (el) => {
+        if (el.dataset.typed === "true") return;
+        el.dataset.typed = "true";
+        const text = el.dataset.typewriter || el.textContent || "";
+        if (reduceMotion) {
+          el.textContent = text;
+          return;
+        }
+        el.textContent = "";
+        el.classList.add("typing");
+        let index = 0;
+        const speed = text.length > 70 ? 12 : 16;
+        const tick = () => {
+          el.textContent = text.slice(0, index);
+          index += 1;
+          if (index <= text.length) {
+            window.setTimeout(tick, speed);
+          } else {
+            el.classList.remove("typing");
+          }
+        };
+        tick();
+      };
+
+      if (typewriterTargets.length) {
+        const typeObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            typeText(entry.target);
+            typeObserver.unobserve(entry.target);
+          });
+        }, { threshold: 0.35 });
+        typewriterTargets.forEach((el) => typeObserver.observe(el));
+      }
+    })();
+  </script>
+</body>
+</html>
